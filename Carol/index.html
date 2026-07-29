@@ -264,15 +264,26 @@
     <section class="relative h-screen flex items-center justify-center pt-28 md:pt-20 overflow-hidden">
         <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center gap-12 relative z-10">
             
-            <div class="flex-1 text-center md:text-left flex flex-col gap-6 order-2 md:order-1" id="hero-content">
-                <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-saturno-primary/30 bg-saturno-primary/10 w-fit mx-auto md:mx-0">
+            <!-- Badge mobile: aparece acima do cartão; no desktop some daqui e volta a aparecer dentro do bloco de texto -->
+            <div class="w-full flex justify-center order-1 md:hidden">
+                <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-saturno-primary/30 bg-saturno-primary/10 w-fit">
                     <span class="relative flex h-2 w-2">
                       <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-saturno-primary opacity-75"></span>
                       <span class="relative inline-flex rounded-full h-2 w-2 bg-saturno-primary"></span>
                     </span>
                     <span class="text-xs font-semibold text-saturno-primary tracking-wider uppercase">Proposta Digital Exclusiva</span>
                 </div>
-                
+            </div>
+
+            <div class="flex-1 text-center md:text-left flex flex-col gap-6 order-3 md:order-1" id="hero-content">
+                <div class="hidden md:inline-flex items-center gap-2 px-4 py-2 rounded-full border border-saturno-primary/30 bg-saturno-primary/10 w-fit mx-auto md:mx-0">
+                    <span class="relative flex h-2 w-2">
+                      <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-saturno-primary opacity-75"></span>
+                      <span class="relative inline-flex rounded-full h-2 w-2 bg-saturno-primary"></span>
+                    </span>
+                    <span class="text-xs font-semibold text-saturno-primary tracking-wider uppercase">Proposta Digital Exclusiva</span>
+                </div>
+
                 <h1 class="hidden md:block text-5xl md:text-7xl font-bold tracking-tighter leading-tight">
                     O futuro do <br>
                     <span class="text-gradient-primary">networking.</span>
@@ -291,7 +302,7 @@
             </div>
 
             <!-- Hero Image/Abstract (Substituto temporário até o scroll chegar no 3D real) -->
-            <div class="flex-1 w-full h-[300px] md:h-[600px] relative order-1 md:order-2" id="hero-visual">
+            <div class="flex-1 w-full h-[300px] md:h-[600px] relative order-2 md:order-2" id="hero-visual">
                  <div class="absolute inset-0 bg-gradient-to-br from-saturno-primary/20 to-transparent rounded-full blur-3xl opacity-50 animate-pulse"></div>
                  <!-- Placeholder visual elegante -->
                  <div class="w-full h-full flex items-center justify-center relative">
@@ -457,7 +468,7 @@
                             <li class="flex items-start gap-3"><i data-lucide="check-circle-2" class="w-5 h-5 text-saturno-primary flex-shrink-0"></i> <span>Entrega em até 2 a 3 dias úteis</span></li>
                             <li class="flex items-start gap-3"><i data-lucide="check-circle-2" class="w-5 h-5 text-saturno-primary flex-shrink-0"></i> <span>Você recebe tudo configurado e funcionando</span></li>
                         </ul>
-                        <button onclick="openApprovalModal()" class="btn-premium w-full py-4 bg-saturno-primary text-white rounded-xl font-bold mt-8 shadow-md">Plano Escolhido</button>
+                        <button onclick="openApprovalModal()" class="btn-premium w-full py-4 bg-saturno-primary text-white rounded-xl font-bold mt-8 shadow-md">Aprovar Proposta</button>
                     </div>
                 </div>
 
