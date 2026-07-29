@@ -591,7 +591,7 @@
                     <div class="relative pl-8 timeline-step opacity-50">
                         <div class="absolute w-4 h-4 bg-zinc-700 rounded-full -left-[9px] top-1 border-2 border-saturno-bg"></div>
                         <h4 class="text-lg font-bold text-white">Desenvolvimento</h4>
-                        <p class="text-sm text-zinc-400 mt-1">Criamos seu perfil digital e gravamos os cartões físicos.</p>
+                        <p class="text-sm text-zinc-400 mt-1">Criamos seu site totalmente personalizado e gravamos os cartões físicos.</p>
                     </div>
                     <!-- Step 4 -->
                     <div class="relative pl-8 timeline-step opacity-50">
@@ -1035,6 +1035,12 @@
                 y: 30, opacity: 0, duration: 0.8, stagger: 0.2
             });
 
+            // Texto da simulação: aparece uma única vez, não entra no loop do celular/cartão
+            gsap.from("#sim-text > *", {
+                scrollTrigger: { trigger: "#simulation", start: "top 50%" },
+                y: 30, opacity: 0, duration: 0.8, stagger: 0.2
+            });
+
             // Simulation Animation Timeline
             // No mobile, a animação do celular + cartão roda em loop, reiniciando sozinha
             const tlSim = gsap.timeline({
@@ -1046,9 +1052,6 @@
                 }
             });
 
-            // Textos da simulação
-            tlSim.from("#sim-text > *", { y: 30, opacity: 0, duration: 0.8, stagger: 0.2 }, 0);
-            
             // Celular sobe
             tlSim.from("#sim-phone", { y: 100, opacity: 0, duration: 1, ease: "back.out(1.2)" }, 0.2);
             
@@ -1305,6 +1308,13 @@
             });
 
             function tick() {
+                // Em mobile não há hover real, e essa lógica entrava em conflito com a transform
+                // controlada pelo GSAP no loop do celular/cartão, causando o cartão ficar pequeno
+                // até dar refresh na página. Por isso o efeito de proximidade só roda no desktop.
+                if (window.innerWidth < 768) {
+                    requestAnimationFrame(tick);
+                    return;
+                }
                 cards.forEach(card => {
                     const rect = card.getBoundingClientRect();
                     // Ignora cards fora da tela (evita cálculo/transform desnecessário)
