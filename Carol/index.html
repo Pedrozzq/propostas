@@ -52,10 +52,15 @@
 
     <style>
         /* Base & Scrollbar */
+        html {
+            overflow-x: hidden;
+            max-width: 100vw;
+        }
         body {
             background-color: #050505;
             color: #FFFFFF;
             overflow-x: hidden;
+            max-width: 100vw;
             -webkit-font-smoothing: antialiased;
         }
 
@@ -265,7 +270,7 @@
         <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center gap-12 relative z-10">
             
             <!-- Badge mobile: aparece acima do cartão; no desktop some daqui e volta a aparecer dentro do bloco de texto -->
-            <div class="w-full flex justify-center order-1 md:hidden">
+            <div class="w-full flex justify-center order-2 md:hidden">
                 <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-saturno-primary/30 bg-saturno-primary/10 w-fit">
                     <span class="relative flex h-2 w-2">
                       <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-saturno-primary opacity-75"></span>
@@ -294,15 +299,19 @@
                 </p>
                 
                 <div class="flex flex-col sm:flex-row items-center gap-4 mt-4">
-                    <button onclick="document.getElementById('showcase').scrollIntoView()" class="btn-premium w-full sm:w-auto px-8 py-4 bg-saturno-primary text-white rounded-xl font-semibold shadow-glow hover:shadow-glow-lg flex items-center justify-center gap-2">
+                    <button onclick="document.getElementById('showcase').scrollIntoView()" class="hidden md:flex btn-premium w-full sm:w-auto px-8 py-4 bg-saturno-primary text-white rounded-xl font-semibold shadow-glow hover:shadow-glow-lg items-center justify-center gap-2">
                         Explorar Experiência
                         <i data-lucide="arrow-down" class="w-5 h-5"></i>
+                    </button>
+                    <button onclick="document.getElementById('showcase').scrollIntoView()" class="md:hidden flex flex-col items-center gap-1 text-saturno-textMuted">
+                        <i data-lucide="chevron-down" class="w-6 h-6 animate-bounce text-saturno-primary"></i>
+                        <span class="text-xs uppercase tracking-wider">Deslize para ver mais</span>
                     </button>
                 </div>
             </div>
 
             <!-- Hero Image/Abstract (Substituto temporário até o scroll chegar no 3D real) -->
-            <div class="flex-1 w-full h-[300px] md:h-[600px] relative order-2 md:order-2" id="hero-visual">
+            <div class="flex-1 w-full h-[300px] md:h-[600px] relative order-1 md:order-2" id="hero-visual">
                  <div class="absolute inset-0 bg-gradient-to-br from-saturno-primary/20 to-transparent rounded-full blur-3xl opacity-50 animate-pulse"></div>
                  <!-- Placeholder visual elegante -->
                  <div class="w-full h-full flex items-center justify-center relative">
@@ -315,7 +324,7 @@
     </section>
 
     <!-- 3D Showcase Section -->
-    <section id="showcase" class="py-32 relative">
+    <section id="showcase" class="pt-32 pb-12 md:pb-32 relative">
         <div class="max-w-7xl mx-auto px-6">
             <div class="text-center mb-16" id="showcase-text">
                 <h2 class="text-3xl md:text-5xl font-bold mb-4">Seu cartão, reimaginado.</h2>
@@ -338,7 +347,7 @@
     </section>
 
     <!-- NFC Simulation Section -->
-    <section id="simulation" class="py-32 relative border-y border-white/5 bg-black/40">
+    <section id="simulation" class="pt-12 pb-32 md:pt-32 relative border-y border-white/5 bg-black/40">
         <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center gap-16">
             <div class="flex-1 order-2 md:order-1 relative h-[600px] w-full flex items-center justify-center" id="sim-visuals">
                 
@@ -1027,7 +1036,10 @@
             });
 
             // Simulation Animation Timeline
+            // No mobile, a animação do celular + cartão roda em loop, reiniciando sozinha
             const tlSim = gsap.timeline({
+                repeat: window.innerWidth < 768 ? -1 : 0,
+                repeatDelay: 1,
                 scrollTrigger: {
                     trigger: "#simulation",
                     start: "top 50%", // Inicia quando o topo da seção chega no meio da tela
@@ -1237,16 +1249,17 @@
                 // Rotação ociosa contínua suave (se o mouse não estiver controlando fortemente)
                 const time = clock.getElapsedTime();
 
-                // No mobile não há arraste: o cartão gira sozinho em uma vitrine 360° suave
+                // No mobile não há arraste: o cartão gira sozinho em uma vitrine 360° suave e sofisticada
+                // (duas ondas sobrepostas em frequências diferentes evitam um movimento mecânico/repetitivo)
                 if (isMobileView && !isSpinning) {
-                    targetRotationY = Math.sin(time * 0.5) * 0.6;
-                    targetRotationX = Math.sin(time * 0.35) * 0.15;
+                    targetRotationY = Math.sin(time * 0.28) * 0.38 + Math.sin(time * 0.13) * 0.08;
+                    targetRotationX = Math.sin(time * 0.19) * 0.08;
                 }
 
                 // Lerp (Interpolação suave) para a rotação do mouse (pausado durante o giro por toque)
                 if (!isSpinning) {
-                    card.rotation.y += (targetRotationY - card.rotation.y) * 0.05;
-                    card.rotation.x += (targetRotationX - card.rotation.x) * 0.05;
+                    card.rotation.y += (targetRotationY - card.rotation.y) * 0.035;
+                    card.rotation.x += (targetRotationX - card.rotation.x) * 0.035;
                 }
 
                 // Adicionar leve flutuação
