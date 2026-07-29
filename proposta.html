@@ -1,0 +1,1125 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saturno NFC | Proposta Comercial</title>
+    
+    <!-- SEO & Meta Tags (Preparado) -->
+    <meta name="description" content="Proposta comercial exclusiva Saturno NFC.">
+    <meta name="theme-color" content="#000000">
+    <link rel="icon" type="image/png" href="img/logo-icon.png">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Ícones -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Tailwind CSS (via script para configuração customizada) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        saturno: {
+                            bg: '#050505',
+                            surface: '#111111',
+                            surfaceHover: '#1A1A1A',
+                            border: '#222222',
+                            primary: '#3F66D9',
+                            primaryGlow: 'rgba(63, 102, 217, 0.4)',
+                            text: '#FFFFFF',
+                            textMuted: '#A1A1AA'
+                        }
+                    },
+                    boxShadow: {
+                        'glow': '0 0 20px rgba(63, 102, 217, 0.3)',
+                        'glow-lg': '0 0 40px rgba(63, 102, 217, 0.5)',
+                        'glass': '0 4px 30px rgba(0, 0, 0, 0.5)',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Base & Scrollbar */
+        body {
+            background-color: #050505;
+            color: #FFFFFF;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #050505;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #222222;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #3F66D9;
+        }
+
+        /* Utilidades Glassmorphism */
+        .glass {
+            background: rgba(17, 17, 17, 0.6);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        
+        .glass-card {
+            background: linear-gradient(145deg, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0.01) 100%);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255,255,255,0.05);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+        }
+
+        /* Efeito Aurora Animado */
+        .aurora-bg {
+            position: fixed;
+            top: 0; left: 0; width: 100vw; height: 100vh;
+            z-index: -2;
+            overflow: hidden;
+            background: #050505;
+        }
+        .aurora-blob {
+            position: absolute;
+            filter: blur(80px);
+            opacity: 0.4;
+            animation: float 20s infinite ease-in-out alternate;
+        }
+        .blob-1 {
+            top: -10%; left: -10%; width: 50vw; height: 50vw;
+            background: radial-gradient(circle, rgba(63,102,217,0.15) 0%, transparent 70%);
+            animation-delay: 0s;
+        }
+        .blob-2 {
+            bottom: -20%; right: -10%; width: 60vw; height: 60vw;
+            background: radial-gradient(circle, rgba(25,51,128,0.2) 0%, transparent 70%);
+            animation-delay: -5s;
+        }
+
+        /* Grid Background */
+        .grid-bg {
+            position: fixed;
+            top: 0; left: 0; width: 100vw; height: 100vh;
+            z-index: -1;
+            background-image: 
+                linear-gradient(to right, rgba(255,255,255,0.02) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(255,255,255,0.02) 1px, transparent 1px);
+            background-size: 50px 50px;
+            mask-image: radial-gradient(ellipse at center, black 40%, transparent 80%);
+            -webkit-mask-image: radial-gradient(ellipse at center, black 40%, transparent 80%);
+        }
+
+        @keyframes float {
+            0% { transform: translate(0, 0) scale(1); }
+            100% { transform: translate(10%, 10%) scale(1.1); }
+        }
+
+        /* Text Gradients */
+        .text-gradient {
+            background: linear-gradient(to right, #FFFFFF, #A1A1AA);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .text-gradient-primary {
+            background: linear-gradient(135deg, #6A88E1 0%, #3F66D9 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Button Premium */
+        .btn-premium {
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+        .btn-premium::before {
+            content: '';
+            position: absolute;
+            top: 0; left: -100%;
+            width: 100%; height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: all 0.5s ease;
+        }
+        .btn-premium:hover::before {
+            left: 100%;
+        }
+        
+        /* Plan Card Hover */
+        .plan-card {
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        .plan-card:hover {
+            border-color: #3F66D9;
+        }
+
+        /* Phone Simulation */
+        .phone-mockup {
+            border: 8px solid #222;
+            border-radius: 40px;
+            box-shadow: inset 0 0 20px rgba(0,0,0,0.5), 0 20px 50px rgba(0,0,0,0.5);
+            background: #000;
+            position: relative;
+            overflow: hidden;
+        }
+        .phone-notch {
+            position: absolute;
+            top: 0; left: 50%;
+            transform: translateX(-50%);
+            width: 40%; height: 24px;
+            background: #222;
+            border-bottom-left-radius: 12px;
+            border-bottom-right-radius: 12px;
+            z-index: 10;
+        }
+
+        /* Ripple Effect */
+        .ripple-wave {
+            position: absolute;
+            border-radius: 50%;
+            border: 2px solid #3F66D9;
+            opacity: 0;
+            pointer-events: none;
+        }
+        
+        @keyframes ripple-anim {
+            0% { width: 0; height: 0; opacity: 1; margin-top: 0; margin-left: 0; }
+            100% { width: 300px; height: 300px; opacity: 0; margin-top: -150px; margin-left: -150px; }
+        }
+
+        #three-canvas-container {
+            width: 100%;
+            height: 100%;
+            cursor: grab;
+        }
+        #three-canvas-container:active {
+            cursor: grabbing;
+        }
+
+        /* Proximity Animation System (mockups & cards react as the cursor approaches) */
+        .proximity-card {
+            position: relative;
+            transform-style: preserve-3d;
+            transition: transform 0.2s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.3s ease;
+            will-change: transform;
+            filter: drop-shadow(0 0 calc(var(--proximity, 0) * 26px) rgba(63, 102, 217, calc(var(--proximity, 0) * 0.55)));
+        }
+        .proximity-card::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: inherit;
+            background: radial-gradient(circle at var(--spot-x, 50%) var(--spot-y, 50%), rgba(255, 255, 255, 0.35), rgba(63, 102, 217, 0.25) 40%, transparent 65%);
+            opacity: var(--proximity, 0);
+            transition: opacity 0.25s ease;
+            pointer-events: none;
+            z-index: 5;
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-saturno-primary selection:text-white relative">
+
+    <!-- Backgrounds -->
+    <div class="aurora-bg">
+        <div class="aurora-blob blob-1"></div>
+        <div class="aurora-blob blob-2"></div>
+    </div>
+    <div class="grid-bg"></div>
+
+    <!-- Navbar -->
+    <nav class="fixed w-full z-50 glass border-b border-white/5 transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <div class="flex items-center gap-2">
+                <img src="img/logo-icon.png" alt="Saturno NFC" class="h-9 w-auto">
+                <span class="font-bold text-xl tracking-tight text-white">Saturno <span class="font-light">NFC</span></span>
+            </div>
+            <div class="hidden md:flex items-center gap-6 text-sm text-saturno-textMuted font-medium">
+                <p>Proposta para: <span class="text-white" data-var="empresa">Carregando...</span></p>
+                <div class="h-4 w-px bg-white/10"></div>
+                <button onclick="document.getElementById('plans').scrollIntoView()" class="hover:text-white transition-colors">Ver Planos</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative h-screen flex items-center justify-center pt-20 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center gap-12 relative z-10">
+            
+            <div class="flex-1 text-center md:text-left flex flex-col gap-6" id="hero-content">
+                <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-saturno-primary/30 bg-saturno-primary/10 w-fit mx-auto md:mx-0">
+                    <span class="relative flex h-2 w-2">
+                      <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-saturno-primary opacity-75"></span>
+                      <span class="relative inline-flex rounded-full h-2 w-2 bg-saturno-primary"></span>
+                    </span>
+                    <span class="text-xs font-semibold text-saturno-primary tracking-wider uppercase">Proposta Digital Exclusiva</span>
+                </div>
+                
+                <h1 class="text-5xl md:text-7xl font-bold tracking-tighter leading-tight">
+                    O futuro do <br>
+                    <span class="text-gradient-primary">networking.</span>
+                </h1>
+                
+                <p class="text-lg md:text-xl text-saturno-textMuted max-w-xl mx-auto md:mx-0 font-light leading-relaxed">
+                    Olá <span class="text-white font-medium" data-var="responsavel">Cliente</span>, preparamos esta proposta para elevar a forma como a <span class="text-white font-medium" data-var="empresa">Empresa</span> se conecta com o mundo, combinando tecnologia NFC e design premium.
+                </p>
+                
+                <div class="flex flex-col sm:flex-row items-center gap-4 mt-4">
+                    <button onclick="document.getElementById('showcase').scrollIntoView()" class="btn-premium w-full sm:w-auto px-8 py-4 bg-saturno-primary text-white rounded-xl font-semibold shadow-glow hover:shadow-glow-lg flex items-center justify-center gap-2">
+                        Explorar Experiência
+                        <i data-lucide="arrow-down" class="w-5 h-5"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Hero Image/Abstract (Substituto temporário até o scroll chegar no 3D real) -->
+            <div class="flex-1 w-full h-[400px] md:h-[600px] relative hidden md:block" id="hero-visual">
+                 <div class="absolute inset-0 bg-gradient-to-br from-saturno-primary/20 to-transparent rounded-full blur-3xl opacity-50 animate-pulse"></div>
+                 <!-- Placeholder visual elegante -->
+                 <div class="w-full h-full flex items-center justify-center relative">
+                     <div class="proximity-card w-80 md:w-96 aspect-[1.586/1] rounded-2xl overflow-hidden border border-white/10 shadow-2xl" data-base-rotate="12">
+                         <img src="img/1.png" alt="Cartão Saturno NFC" class="w-full h-full object-cover pointer-events-none select-none">
+                     </div>
+                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3D Showcase Section -->
+    <section id="showcase" class="py-32 relative">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16" id="showcase-text">
+                <h2 class="text-3xl md:text-5xl font-bold mb-4">Seu cartão, reimaginado.</h2>
+                <p class="text-saturno-textMuted max-w-2xl mx-auto">Interaja com a simulação abaixo. Material premium, reflexo dinâmico e tecnologia embarcada.</p>
+            </div>
+            
+            <div class="w-full h-[500px] md:h-[600px] rounded-3xl glass-card relative overflow-hidden flex items-center justify-center" id="three-container-wrapper">
+                <!-- Overlay de instrução -->
+                <div class="absolute bottom-6 left-1/2 transform -translate-x-1/2 flex items-center gap-2 text-sm text-white/50 bg-black/40 px-4 py-2 rounded-full backdrop-blur-md z-10 pointer-events-none">
+                    <i data-lucide="mouse-pointer-click" class="w-4 h-4"></i>
+                    Arraste para interagir
+                </div>
+                
+                <!-- Canvas Three.js -->
+                <div id="three-canvas-container"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- NFC Simulation Section -->
+    <section id="simulation" class="py-32 relative border-y border-white/5 bg-black/40">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center gap-16">
+            <div class="flex-1 order-2 md:order-1 relative h-[600px] w-full flex items-center justify-center" id="sim-visuals">
+                
+                <!-- Phone Mockup (outer: GSAP position/shake; inner: proximity tilt/glow) -->
+                <div class="w-[280px] h-[580px] z-10" id="sim-phone">
+                  <div class="phone-mockup proximity-card w-full h-full">
+                    <div class="phone-notch"></div>
+                    <!-- Phone Screen -->
+                    <div class="w-full h-full bg-zinc-900 pt-10 px-4 relative flex flex-col">
+                        <!-- Tela inicial do celular -->
+                        <div id="sim-screen-default" class="w-full h-full flex flex-col justify-between pb-8">
+                            <div class="flex justify-between px-2 text-[10px] text-zinc-400">
+                                <span>9:41</span>
+                                <div class="flex gap-1"><i data-lucide="wifi" class="w-3 h-3"></i><i data-lucide="battery-full" class="w-3 h-3"></i></div>
+                            </div>
+                            <div class="grid grid-cols-4 gap-4 mt-auto">
+                                <div class="w-12 h-12 bg-zinc-800 rounded-xl"></div>
+                                <div class="w-12 h-12 bg-zinc-800 rounded-xl"></div>
+                                <div class="w-12 h-12 bg-zinc-800 rounded-xl"></div>
+                                <div class="w-12 h-12 bg-zinc-800 rounded-xl"></div>
+                            </div>
+                        </div>
+                        
+                        <!-- Overlay "Conectado" -->
+                        <div id="sim-screen-connected" class="absolute inset-0 bg-black flex flex-col items-center justify-center opacity-0 scale-95 transition-all duration-500">
+                            <div class="w-20 h-20 rounded-full bg-saturno-primary/20 flex items-center justify-center mb-6 shadow-glow">
+                                <div class="w-12 h-12 rounded-full bg-saturno-primary flex items-center justify-center text-white">
+                                    <i data-lucide="check" class="w-6 h-6"></i>
+                                </div>
+                            </div>
+                            <h3 class="text-xl font-bold text-white mb-2">Conectado</h3>
+                            <p class="text-zinc-400 text-sm">Abrindo perfil de <span data-var="empresa">Empresa</span>...</p>
+                            
+                            <!-- Fake Profile UI -->
+                            <div class="mt-8 w-64 glass-card p-4 rounded-xl opacity-0 transform translate-y-4" id="sim-profile-ui">
+                                <div class="flex items-center gap-3 mb-4">
+                                    <div class="w-10 h-10 rounded-full bg-zinc-700"></div>
+                                    <div>
+                                        <div class="h-3 w-20 bg-zinc-700 rounded mb-1"></div>
+                                        <div class="h-2 w-16 bg-zinc-800 rounded"></div>
+                                    </div>
+                                </div>
+                                <div class="h-8 w-full bg-saturno-primary rounded mb-2"></div>
+                                <div class="grid grid-cols-2 gap-2">
+                                    <div class="h-10 bg-zinc-800 rounded"></div>
+                                    <div class="h-10 bg-zinc-800 rounded"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Card Approaching (outer: GSAP approach animation; inner: proximity tilt/glow) -->
+                <div class="absolute right-0 top-1/2 -translate-y-1/2 translate-x-32 w-60 h-[151px] z-20" id="sim-card">
+                    <div class="proximity-card w-full h-full rounded-xl overflow-hidden border border-white/10 shadow-2xl">
+                        <img src="img/1.png" alt="Cartão Saturno NFC" class="w-full h-full object-cover pointer-events-none select-none">
+                    </div>
+                </div>
+
+                <!-- Ripple Anchor -->
+                <div id="sim-ripple-anchor" class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-15"></div>
+            </div>
+
+            <div class="flex-1 order-1 md:order-2" id="sim-text">
+                <h2 class="text-3xl md:text-5xl font-bold mb-6">Apenas um toque.</h2>
+                <p class="text-saturno-textMuted text-lg mb-8">
+                    Esqueça cartões de papel, digitação de números ou soletração de e-mails. Com a tecnologia NFC, um simples toque no smartphone do seu cliente transfere todas as suas informações instantaneamente.
+                </p>
+                <ul class="space-y-4 text-saturno-textMuted">
+                    <li class="flex items-center gap-3">
+                        <div class="w-6 h-6 rounded-full bg-saturno-primary/20 flex items-center justify-center text-saturno-primary">
+                            <i data-lucide="zap" class="w-3 h-3"></i>
+                        </div>
+                        Sem necessidade de aplicativos
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <div class="w-6 h-6 rounded-full bg-saturno-primary/20 flex items-center justify-center text-saturno-primary">
+                            <i data-lucide="smartphone" class="w-3 h-3"></i>
+                        </div>
+                        Compatível com iOS e Android
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <div class="w-6 h-6 rounded-full bg-saturno-primary/20 flex items-center justify-center text-saturno-primary">
+                            <i data-lucide="refresh-cw" class="w-3 h-3"></i>
+                        </div>
+                        Dados atualizáveis em tempo real
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Plans Section -->
+    <section id="plans" class="py-32 relative">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-20">
+                <h2 class="text-3xl md:text-5xl font-bold mb-4">Escolha sua órbita.</h2>
+                <p class="text-saturno-textMuted max-w-2xl mx-auto">Planos dimensionados para o tamanho da sua ambição. Preços exclusivos para <span class="text-white font-medium" data-var="empresa">Empresa</span>.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch" id="plans-container">
+
+                <!-- Plan 1 -->
+                <div class="plan-card proximity-card glass p-8 rounded-3xl border border-white/5 h-full flex flex-col">
+                    <div class="mb-8">
+                        <h3 class="text-xl font-medium text-zinc-400 mb-1">Plano Essencial</h3>
+                        <p class="text-sm text-zinc-500 mb-4">Ter presença digital profissional</p>
+                        <p class="text-xs uppercase tracking-wider text-zinc-600 mb-1">Cartão NFC - Plano Essencial</p>
+                        <div class="flex items-baseline gap-2">
+                            <span class="text-4xl font-bold text-white">R$ <span data-var="valorEssencial">--</span></span>
+                        </div>
+                        <p class="text-sm text-zinc-500 mt-2">Em até 2x sem juros de R$200,00</p>
+                    </div>
+
+                    <ul class="space-y-4 flex-1 text-sm text-zinc-300">
+                        <li class="flex items-start gap-3"><i data-lucide="check-circle-2" class="w-5 h-5 text-zinc-500 flex-shrink-0"></i> <span>4 cartões NFC personalizados</span></li>
+                        <li class="flex items-start gap-3"><i data-lucide="check-circle-2" class="w-5 h-5 text-zinc-500 flex-shrink-0"></i> <span>Site exclusivo com domínio próprio</span></li>
+                        <li class="flex items-start gap-3"><i data-lucide="check-circle-2" class="w-5 h-5 text-zinc-500 flex-shrink-0"></i> <span>Design profissional e adaptado para celulares</span></li>
+                        <li class="flex items-start gap-3"><i data-lucide="check-circle-2" class="w-5 h-5 text-zinc-500 flex-shrink-0"></i> <span>Botões animados e efeitos visuais modernos</span></li>
+                        <li class="flex items-start gap-3"><i data-lucide="check-circle-2" class="w-5 h-5 text-zinc-500 flex-shrink-0"></i> <span>WhatsApp, localização, redes sociais e agendamento</span></li>
+                        <li class="flex items-start gap-3"><i data-lucide="check-circle-2" class="w-5 h-5 text-zinc-500 flex-shrink-0"></i> <span>Opção para salvar seu contato com apenas um toque</span></li>
+                        <li class="flex items-start gap-3"><i data-lucide="check-circle-2" class="w-5 h-5 text-zinc-500 flex-shrink-0"></i> <span>QR Code integrado aos cartões</span></li>
+                        <li class="flex items-start gap-3"><i data-lucide="check-circle-2" class="w-5 h-5 text-zinc-500 flex-shrink-0"></i> <span>Entrega em até 2 a 3 dias úteis</span></li>
+                        <li class="flex items-start gap-3"><i data-lucide="check-circle-2" class="w-5 h-5 text-zinc-500 flex-shrink-0"></i> <span>Você recebe tudo configurado e funcionando</span></li>
+                    </ul>
+                    <button class="w-full py-3 rounded-xl border border-white/10 hover:bg-white/5 transition-colors mt-8 font-medium">Escolher Plano</button>
+                </div>
+
+                <!-- Plan 2 (Custo Benefício) -->
+                <div class="plan-card proximity-card glass-card p-1 rounded-3xl relative h-full md:-translate-y-4 shadow-glow z-10" data-base-y="-16">
+                    <div class="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-saturno-primary text-white text-xs font-bold px-4 py-1 rounded-full uppercase tracking-wider">
+                        Custo Benefício
+                    </div>
+                    <div class="bg-saturno-surface/90 backdrop-blur-xl h-full w-full rounded-[23px] p-8 flex flex-col border border-white/10">
+                        <div class="mb-8">
+                            <h3 class="text-2xl font-bold text-saturno-primary mb-1">Plano Profissional</h3>
+                            <p class="text-sm text-zinc-400 mb-4">Captar clientes e facilitar atendimentos</p>
+                            <p class="text-xs uppercase tracking-wider text-zinc-500 mb-1">Cartão NFC - Plano Profissional</p>
+                            <div class="flex items-baseline gap-2">
+                                <span class="text-5xl font-bold text-white">R$ <span data-var="valorProfissional">--</span></span>
+                            </div>
+                            <p class="text-sm text-zinc-500 mt-2">Em até 2x sem juros de R$400,00</p>
+                        </div>
+
+                        <ul class="space-y-4 flex-1 text-sm text-white">
+                            <li class="flex items-start gap-3"><i data-lucide="check-circle-2" class="w-5 h-5 text-saturno-primary flex-shrink-0"></i> <span>12 cartões NFC personalizados</span></li>
+                            <li class="flex items-start gap-3"><i data-lucide="check-circle-2" class="w-5 h-5 text-saturno-primary flex-shrink-0"></i> <span>3 placas NFC para Google, Wi-Fi e agendamento</span></li>
+                            <li class="flex items-start gap-3"><i data-lucide="check-circle-2" class="w-5 h-5 text-saturno-primary flex-shrink-0"></i> <span>Tudo do plano Essencial incluso</span></li>
+                            <li class="flex items-start gap-3"><i data-lucide="check-circle-2" class="w-5 h-5 text-saturno-primary flex-shrink-0"></i> <span>Site profissional com domínio próprio</span></li>
+                            <li class="flex items-start gap-3"><i data-lucide="check-circle-2" class="w-5 h-5 text-saturno-primary flex-shrink-0"></i> <span>Animações avançadas e experiência visual diferenciada</span></li>
+                            <li class="flex items-start gap-3"><i data-lucide="check-circle-2" class="w-5 h-5 text-saturno-primary flex-shrink-0"></i> <span>QR Code impresso nos cartões</span></li>
+                            <li class="flex items-start gap-3"><i data-lucide="check-circle-2" class="w-5 h-5 text-saturno-primary flex-shrink-0"></i> <span>Entrega em até 3 a 4 dias úteis</span></li>
+                        </ul>
+                        <button class="btn-premium w-full py-4 bg-saturno-primary text-white rounded-xl font-bold mt-8 shadow-md">Escolher Plano</button>
+                    </div>
+                </div>
+
+                <!-- Plan 3 -->
+                <div class="plan-card proximity-card glass p-8 rounded-3xl border border-white/5 h-full flex flex-col">
+                    <div class="mb-8">
+                        <p class="text-xs font-bold uppercase tracking-wider text-saturno-primary/80 mb-2">Para Grandes Empresas</p>
+                        <h3 class="text-xl font-medium text-zinc-400 mb-1">Plano Fora de Órbita</h3>
+                        <p class="text-sm text-zinc-500 mb-4">Digitalizar toda a operação da empresa</p>
+                        <p class="text-xs uppercase tracking-wider text-zinc-600 mb-1">Cartão NFC - Plano Fora de Órbita</p>
+                        <div class="flex items-baseline gap-2">
+                            <span class="text-4xl font-bold text-white">R$ <span data-var="valorOrbita">--</span></span>
+                        </div>
+                        <p class="text-sm text-zinc-500 mt-2">Em até 4x sem juros de R$500,00</p>
+                    </div>
+
+                    <ul class="space-y-4 flex-1 text-sm text-zinc-300">
+                        <li class="flex items-start gap-3"><i data-lucide="check-circle-2" class="w-5 h-5 text-zinc-500 flex-shrink-0"></i> <span>30 cartões NFC personalizados</span></li>
+                        <li class="flex items-start gap-3"><i data-lucide="check-circle-2" class="w-5 h-5 text-zinc-500 flex-shrink-0"></i> <span>30 tags NFC para mesas, cardápios, quartos ou pontos de atendimento</span></li>
+                        <li class="flex items-start gap-3"><i data-lucide="check-circle-2" class="w-5 h-5 text-zinc-500 flex-shrink-0"></i> <span>1 chaveiro NFC direcionado para o Instagram</span></li>
+                        <li class="flex items-start gap-3"><i data-lucide="check-circle-2" class="w-5 h-5 text-zinc-500 flex-shrink-0"></i> <span>Tudo do plano Profissional incluso</span></li>
+                        <li class="flex items-start gap-3"><i data-lucide="check-circle-2" class="w-5 h-5 text-zinc-500 flex-shrink-0"></i> <span>Site profissional sob medida, com identidade exclusiva e domínio próprio</span></li>
+                        <li class="flex items-start gap-3"><i data-lucide="check-circle-2" class="w-5 h-5 text-zinc-500 flex-shrink-0"></i> <span>Animações imersivas e experiência visual premium</span></li>
+                        <li class="flex items-start gap-3"><i data-lucide="check-circle-2" class="w-5 h-5 text-zinc-500 flex-shrink-0"></i> <span>Catálogo, cardápio ou página de apresentação personalizada</span></li>
+                        <li class="flex items-start gap-3"><i data-lucide="check-circle-2" class="w-5 h-5 text-zinc-500 flex-shrink-0"></i> <span>QR Code integrado aos materiais</span></li>
+                        <li class="flex items-start gap-3"><i data-lucide="check-circle-2" class="w-5 h-5 text-zinc-500 flex-shrink-0"></i> <span>Relatório de acessos, cliques e interações</span></li>
+                        <li class="flex items-start gap-3"><i data-lucide="check-circle-2" class="w-5 h-5 text-zinc-500 flex-shrink-0"></i> <span>Entrega em até 4 a 5 dias úteis</span></li>
+                    </ul>
+                    <button class="w-full py-3 rounded-xl border border-white/10 hover:bg-white/5 transition-colors mt-8 font-medium">Agendar Reunião Técnica</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Proposal Details & Timeline -->
+    <section class="py-20 relative bg-black/60 border-t border-white/5">
+        <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-16">
+            
+            <!-- Details -->
+            <div id="details-panel" class="glass p-8 rounded-3xl">
+                <h3 class="text-2xl font-bold mb-6 flex items-center gap-2">
+                    <i data-lucide="file-text" class="text-saturno-primary"></i>
+                    Resumo da Proposta
+                </h3>
+                
+                <div class="space-y-6">
+                    <div class="flex justify-between items-center border-b border-white/10 pb-4">
+                        <span class="text-zinc-400">Cliente</span>
+                        <span class="font-medium text-right"><span data-var="empresa">--</span><br><span class="text-xs text-zinc-500" data-var="cnpj">--</span></span>
+                    </div>
+                    <div class="flex justify-between items-center border-b border-white/10 pb-4">
+                        <span class="text-zinc-400">Responsável</span>
+                        <span class="font-medium text-right"><span data-var="responsavel">--</span><br><span class="text-xs text-zinc-500" data-var="email">--</span></span>
+                    </div>
+                    <div class="flex justify-between items-center border-b border-white/10 pb-4">
+                        <span class="text-zinc-400">Prazo de Produção</span>
+                        <span class="font-medium text-saturno-primary">5 a 7 dias úteis</span>
+                    </div>
+                    <div class="flex justify-between items-center border-b border-white/10 pb-4">
+                        <span class="text-zinc-400">Garantia</span>
+                        <span class="font-medium">1 Ano (Hardware)</span>
+                    </div>
+                    
+                    <div class="pt-4 flex gap-4">
+                        <button onclick="mockGeneratePDF()" class="flex-1 py-3 rounded-xl border border-white/20 hover:bg-white/10 transition-colors flex items-center justify-center gap-2 text-sm font-medium">
+                            <i data-lucide="download" class="w-4 h-4"></i> Baixar PDF
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Timeline -->
+            <div>
+                <h3 class="text-2xl font-bold mb-8">Próximos Passos</h3>
+                <div class="relative border-l border-white/20 ml-4 space-y-8" id="process-timeline">
+                    <!-- Step 1 -->
+                    <div class="relative pl-8 timeline-step">
+                        <div class="absolute w-4 h-4 bg-saturno-primary rounded-full -left-[9px] top-1 shadow-[0_0_10px_#3F66D9]"></div>
+                        <h4 class="text-lg font-bold text-white">Aprovação da Proposta</h4>
+                        <p class="text-sm text-zinc-400 mt-1">Você aceita esta proposta digitalmente.</p>
+                    </div>
+                    <!-- Step 2 -->
+                    <div class="relative pl-8 timeline-step opacity-50">
+                        <div class="absolute w-4 h-4 bg-zinc-700 rounded-full -left-[9px] top-1 border-2 border-saturno-bg"></div>
+                        <h4 class="text-lg font-bold text-white">Pagamento e Setup</h4>
+                        <p class="text-sm text-zinc-400 mt-1">Realização do pagamento e envio da logo/dados.</p>
+                    </div>
+                    <!-- Step 3 -->
+                    <div class="relative pl-8 timeline-step opacity-50">
+                        <div class="absolute w-4 h-4 bg-zinc-700 rounded-full -left-[9px] top-1 border-2 border-saturno-bg"></div>
+                        <h4 class="text-lg font-bold text-white">Desenvolvimento</h4>
+                        <p class="text-sm text-zinc-400 mt-1">Criamos seu perfil digital e gravamos os cartões físicos.</p>
+                    </div>
+                    <!-- Step 4 -->
+                    <div class="relative pl-8 timeline-step opacity-50">
+                        <div class="absolute w-4 h-4 bg-zinc-700 rounded-full -left-[9px] top-1 border-2 border-saturno-bg"></div>
+                        <h4 class="text-lg font-bold text-white">Lançamento</h4>
+                        <p class="text-sm text-zinc-400 mt-1">Seus cartões são enviados prontos para uso.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Approval CTA -->
+    <section class="py-32 relative text-center">
+        <div class="max-w-3xl mx-auto px-6">
+            <h2 class="text-4xl font-bold mb-6">Pronto para dar o próximo passo?</h2>
+            <p class="text-zinc-400 mb-10 text-lg">Ao aprovar, iniciaremos o processo de onboarding imediatamente.</p>
+            
+            <button onclick="openApprovalModal()" class="btn-premium px-12 py-5 bg-gradient-to-r from-saturno-primary to-blue-700 text-white rounded-2xl font-bold text-xl shadow-glow-lg hover:scale-105 transform transition-all duration-300">
+                Aprovar Proposta
+            </button>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-8 border-t border-white/5 text-center text-sm text-zinc-600">
+        <p>&copy; 2026 Saturno NFC. Todos os direitos reservados.</p>
+        <p class="mt-2 text-xs">Proposta gerada para <span data-var="empresa">--</span>. Validade de 7 dias.</p>
+    </footer>
+
+    <!-- Approval Modal (Hidden by default) -->
+    <div id="approval-modal" class="fixed inset-0 bg-black/80 backdrop-blur-sm z-[100] hidden items-center justify-center opacity-0 transition-opacity duration-300">
+        <div class="glass-card w-full max-w-md p-8 rounded-3xl transform scale-95 transition-transform duration-300 border border-saturno-primary/30" id="modal-content">
+            
+            <!-- Default State -->
+            <div id="modal-state-confirm">
+                <div class="w-16 h-16 rounded-full bg-saturno-primary/20 text-saturno-primary flex items-center justify-center mx-auto mb-6">
+                    <i data-lucide="check-circle" class="w-8 h-8"></i>
+                </div>
+                <h3 class="text-2xl font-bold text-center mb-2">Confirmar Aprovação</h3>
+                <p class="text-center text-zinc-400 mb-8 text-sm">Tem certeza que deseja aprovar a proposta do plano <strong class="text-white">Profissional</strong> no valor de <strong class="text-white">R$ <span data-var="valorProfissional"></span></strong>?</p>
+                
+                <div class="flex gap-4">
+                    <button onclick="closeApprovalModal()" class="flex-1 py-3 rounded-xl border border-white/10 hover:bg-white/5 text-sm font-medium transition-colors">Cancelar</button>
+                    <button onclick="confirmApproval()" class="flex-1 py-3 rounded-xl bg-saturno-primary text-white text-sm font-bold shadow-glow hover:bg-blue-700 transition-colors">Sim, Aprovar</button>
+                </div>
+            </div>
+
+            <!-- Success State -->
+            <div id="modal-state-success" class="hidden flex-col items-center justify-center py-6">
+                <!-- Check Animation -->
+                <div class="relative w-24 h-24 mb-6">
+                    <svg class="checkmark w-24 h-24 text-saturno-primary" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52">
+                        <circle class="checkmark__circle stroke-current" cx="26" cy="26" r="25" fill="none" stroke-width="2" stroke-miterlimit="10"/>
+                        <path class="checkmark__check stroke-current" fill="none" stroke-width="3" d="M14.1 27.2l7.1 7.2 16.7-16.8"/>
+                    </svg>
+                    <style>
+                        .checkmark__circle { stroke-dasharray: 166; stroke-dashoffset: 166; stroke-width: 2; stroke-miterlimit: 10; fill: none; animation: stroke 0.6s cubic-bezier(0.65, 0, 0.45, 1) forwards; }
+                        .checkmark__check { transform-origin: 50% 50%; stroke-dasharray: 48; stroke-dashoffset: 48; animation: stroke 0.3s cubic-bezier(0.65, 0, 0.45, 1) 0.8s forwards; }
+                        @keyframes stroke { 100% { stroke-dashoffset: 0; } }
+                    </style>
+                </div>
+                <h3 class="text-2xl font-bold text-center mb-2">Proposta Aprovada!</h3>
+                <p class="text-center text-zinc-400 mb-8 text-sm">Obrigado por escolher a Saturno NFC. Vamos decolar.</p>
+                
+                <div class="w-full space-y-3">
+                    <p class="text-xs text-center uppercase tracking-wider text-zinc-500 font-bold mb-4">Escolha a forma de pagamento</p>
+                    <button onclick="trackPayment('PIX')" class="w-full py-3 rounded-xl bg-[#32BCAD]/10 text-[#32BCAD] border border-[#32BCAD]/30 hover:bg-[#32BCAD]/20 flex items-center justify-center gap-2 font-medium transition-colors">
+                        <i data-lucide="qr-code" class="w-5 h-5"></i> Pagar com PIX
+                    </button>
+                    <button onclick="trackPayment('Cartão')" class="w-full py-3 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 flex items-center justify-center gap-2 font-medium transition-colors text-white">
+                        <i data-lucide="credit-card" class="w-5 h-5"></i> Cartão de Crédito
+                    </button>
+                    <a href="#" onclick="trackPayment('WhatsApp')" class="w-full py-3 rounded-xl bg-[#25D366]/10 text-[#25D366] border border-[#25D366]/30 hover:bg-[#25D366]/20 flex items-center justify-center gap-2 font-medium transition-colors">
+                        Falar no WhatsApp
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
+    <script>
+        // Inicializar ícones Lucide
+        lucide.createIcons();
+
+        // --------------------------------------------------------
+        // 1. DATA STATE & TEMPLATE ENGINE
+        // --------------------------------------------------------
+        const clientData = {
+            empresa: "Carol Faria Personal",
+            responsavel: "Carol Faria",
+            cnpj: "12.345.678/0001-99",
+            telefone: "(11) 99999-9999",
+            email: "carol@carolfariapersonal.com",
+            valorEssencial: "400",
+            valorProfissional: "800",
+            valorOrbita: "2.000"
+        };
+
+        function renderTemplate() {
+            const elements = document.querySelectorAll('[data-var]');
+            elements.forEach(el => {
+                const key = el.getAttribute('data-var');
+                if (clientData[key]) {
+                    el.textContent = clientData[key];
+                }
+            });
+        }
+
+        // --------------------------------------------------------
+        // 2. TRACKING & FIREBASE STUBS
+        // --------------------------------------------------------
+        const Tracking = {
+            initTime: Date.now(),
+            
+            trackOpen: () => console.log("[TRACKING] Proposta aberta", new Date().toISOString()),
+            
+            trackView: (section) => console.log(`[TRACKING] Visualizando seção: ${section}`),
+            
+            trackApprove: () => console.log("[TRACKING] Proposta Aprovada!"),
+            
+            trackPayment: (method) => console.log(`[TRACKING] Intenção de pagamento: ${method}`),
+            
+            trackScroll: (depth) => console.log(`[TRACKING] Scroll depth: ${depth}%`),
+            
+            createProductionOrder: () => {
+                const order = {
+                    cliente: clientData.empresa,
+                    plano: "Profissional",
+                    valor: clientData.valorProfissional,
+                    data: new Date().toISOString(),
+                    status: "aprovada",
+                    vendedor: "Sistema Saturno"
+                };
+                console.log("[FIREBASE STUB] Criando ordem de produção no Firestore:", order);
+                // Aqui entraria: await addDoc(collection(db, 'orders'), order);
+            }
+        };
+
+        // --------------------------------------------------------
+        // 3. UI LOGIC (Modal, Navbar, etc)
+        // --------------------------------------------------------
+        const modal = document.getElementById('approval-modal');
+        const modalContent = document.getElementById('modal-content');
+        const stateConfirm = document.getElementById('modal-state-confirm');
+        const stateSuccess = document.getElementById('modal-state-success');
+
+        function openApprovalModal() {
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+            // Pequeno delay para animação de fade in
+            setTimeout(() => {
+                modal.classList.remove('opacity-0');
+                modalContent.classList.remove('scale-95');
+            }, 10);
+        }
+
+        function closeApprovalModal() {
+            modal.classList.add('opacity-0');
+            modalContent.classList.add('scale-95');
+            setTimeout(() => {
+                modal.classList.add('hidden');
+                modal.classList.remove('flex');
+                // Reset state on close
+                setTimeout(() => {
+                    stateConfirm.classList.remove('hidden');
+                    stateSuccess.classList.remove('flex');
+                    stateSuccess.classList.add('hidden');
+                }, 300);
+            }, 300);
+        }
+
+        function confirmApproval() {
+            Tracking.trackApprove();
+            Tracking.createProductionOrder();
+
+            // Trocar UI no modal
+            stateConfirm.classList.add('hidden');
+            stateSuccess.classList.remove('hidden');
+            stateSuccess.classList.add('flex');
+
+            // Envia a confirmação de aprovação via WhatsApp para a Saturno NFC
+            const whatsappNumber = '5531920067518';
+            const whatsappMessage = encodeURIComponent('Aprovado ✅');
+            window.open(`https://wa.me/${whatsappNumber}?text=${whatsappMessage}`, '_blank');
+        }
+
+        function trackPayment(method) {
+            Tracking.trackPayment(method);
+            alert(`Integração com ${method} em ambiente de teste.\nEm produção, redirecionaria para gateway.`);
+        }
+
+        function mockGeneratePDF() {
+            console.log("[PDF] Gerando PDF da proposta...");
+            const btn = document.querySelector('button[onclick="mockGeneratePDF()"]');
+            const originalText = btn.innerHTML;
+            btn.innerHTML = `<i data-lucide="loader-2" class="w-4 h-4 animate-spin"></i> Gerando...`;
+            lucide.createIcons();
+            
+            setTimeout(() => {
+                btn.innerHTML = `<i data-lucide="check" class="w-4 h-4"></i> PDF Gerado`;
+                lucide.createIcons();
+                setTimeout(() => { btn.innerHTML = originalText; lucide.createIcons(); }, 3000);
+            }, 1500);
+        }
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', () => {
+            const nav = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                nav.classList.add('bg-black/80', 'backdrop-blur-xl', 'py-2');
+                nav.classList.remove('py-0');
+            } else {
+                nav.classList.remove('bg-black/80', 'backdrop-blur-xl', 'py-2');
+            }
+        });
+
+        // --------------------------------------------------------
+        // 4. GSAP ANIMATIONS
+        // --------------------------------------------------------
+        gsap.registerPlugin(ScrollTrigger);
+
+        function initAnimations() {
+            // Hero
+            gsap.from("#hero-content > *", {
+                y: 50, opacity: 0, duration: 1, stagger: 0.2, ease: "power3.out", delay: 0.2
+            });
+            gsap.from("#hero-visual", {
+                x: 50, opacity: 0, duration: 1.5, ease: "power3.out", delay: 0.5
+            });
+
+            // 3D Showcase Text
+            gsap.from("#showcase-text > *", {
+                scrollTrigger: { trigger: "#showcase", start: "top 80%" },
+                y: 30, opacity: 0, duration: 0.8, stagger: 0.2
+            });
+
+            // Simulation Animation Timeline
+            const tlSim = gsap.timeline({
+                scrollTrigger: {
+                    trigger: "#simulation",
+                    start: "top 50%", // Inicia quando o topo da seção chega no meio da tela
+                }
+            });
+
+            // Textos da simulação
+            tlSim.from("#sim-text > *", { y: 30, opacity: 0, duration: 0.8, stagger: 0.2 }, 0);
+            
+            // Celular sobe
+            tlSim.from("#sim-phone", { y: 100, opacity: 0, duration: 1, ease: "back.out(1.2)" }, 0.2);
+            
+            // Cartão aproxima
+            tlSim.to("#sim-card", {
+                x: -60, // Move em direção ao celular
+                scale: 1.1,
+                rotateY: -15, // Inclina um pouco
+                duration: 1.5,
+                ease: "power2.inOut"
+            }, 1);
+
+            // Efeito de onda (Ripple) e vibração do celular
+            tlSim.call(() => {
+                const anchor = document.getElementById('sim-ripple-anchor');
+                const ripple = document.createElement('div');
+                ripple.className = 'ripple-wave';
+                ripple.style.animation = 'ripple-anim 1s ease-out forwards';
+                anchor.appendChild(ripple);
+                
+                // Shake phone
+                gsap.to("#sim-phone", { x: 5, duration: 0.1, yoyo: true, repeat: 5 });
+                
+                setTimeout(() => anchor.innerHTML = '', 1000);
+            }, [], 2.2);
+
+            // Troca de tela (Conectado)
+            tlSim.to("#sim-screen-connected", { opacity: 1, scale: 1, duration: 0.5, ease: "power2.out" }, 2.5);
+            tlSim.to("#sim-profile-ui", { opacity: 1, y: 0, duration: 0.5, ease: "back.out(1.5)" }, 2.8);
+            
+            // Cartão afasta ligeiramente
+            tlSim.to("#sim-card", { x: 0, scale: 1, rotateY: 0, opacity: 0.5, duration: 1 }, 3);
+
+            // Plans
+            gsap.from(".plan-card", {
+                scrollTrigger: { trigger: "#plans", start: "top 70%" },
+                y: 50, opacity: 0, duration: 0.8, stagger: 0.2, ease: "power3.out"
+            });
+
+            // Details & Timeline
+            gsap.from("#details-panel", {
+                scrollTrigger: { trigger: "#details-panel", start: "top 80%" },
+                x: -50, opacity: 0, duration: 0.8, ease: "power3.out"
+            });
+            
+            gsap.from(".timeline-step", {
+                scrollTrigger: { trigger: "#process-timeline", start: "top 80%" },
+                x: 50, opacity: 0, duration: 0.6, stagger: 0.2, ease: "power3.out"
+            });
+        }
+
+
+        // --------------------------------------------------------
+        // 5. THREE.JS 3D CARD IMPLEMENTATION
+        // --------------------------------------------------------
+        function initThreeJS() {
+            const container = document.getElementById('three-canvas-container');
+            const width = container.clientWidth;
+            const height = container.clientHeight;
+
+            // Scene setup
+            const scene = new THREE.Scene();
+            
+            // Camera setup
+            const camera = new THREE.PerspectiveCamera(45, width / height, 0.1, 1000);
+            camera.position.z = 6;
+
+            // Renderer setup
+            const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+            renderer.setSize(width, height);
+            renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2)); // Otimização
+            container.appendChild(renderer.domElement);
+
+            // Lights para material Premium
+            const ambientLight = new THREE.AmbientLight(0xffffff, 0.4);
+            scene.add(ambientLight);
+
+            const directionalLight = new THREE.DirectionalLight(0xffffff, 1);
+            directionalLight.position.set(5, 5, 5);
+            scene.add(directionalLight);
+
+            const pointLight = new THREE.PointLight(0x3F66D9, 2, 20); // Luz roxa para glow
+            pointLight.position.set(-2, 2, 2);
+            scene.add(pointLight);
+
+            const pointLight2 = new THREE.PointLight(0xffffff, 0.5, 20);
+            pointLight2.position.set(2, -2, 2);
+            scene.add(pointLight2);
+
+            // Texturas reais do cartão (frente e verso) vindas da pasta img
+            renderer.outputEncoding = THREE.sRGBEncoding;
+
+            const textureLoader = new THREE.TextureLoader();
+            const frontTexture = textureLoader.load('img/1.png');
+            const backTexture = textureLoader.load('img/2.png');
+            frontTexture.encoding = THREE.sRGBEncoding;
+            backTexture.encoding = THREE.sRGBEncoding;
+            frontTexture.anisotropy = renderer.capabilities.getMaxAnisotropy();
+            backTexture.anisotropy = renderer.capabilities.getMaxAnisotropy();
+            // A face traseira (-z) do BoxGeometry sai espelhada; corrige invertendo o U
+            backTexture.wrapS = THREE.RepeatWrapping;
+            backTexture.repeat.x = -1;
+            backTexture.offset.x = 1;
+
+            // Material das bordas (canto do cartão em PVC escuro)
+            const edgeMaterial = new THREE.MeshPhysicalMaterial({
+                color: 0x0a0a12,
+                metalness: 0.4,
+                roughness: 0.5,
+                clearcoat: 0.3,
+                clearcoatRoughness: 0.2
+            });
+
+            // Frente e verso: laminado fosco premium com leve verniz (clearcoat)
+            const frontMaterial = new THREE.MeshPhysicalMaterial({
+                map: frontTexture,
+                metalness: 0.05,
+                roughness: 0.35,
+                clearcoat: 0.6,
+                clearcoatRoughness: 0.15
+            });
+            const backMaterial = new THREE.MeshPhysicalMaterial({
+                map: backTexture,
+                metalness: 0.05,
+                roughness: 0.35,
+                clearcoat: 0.6,
+                clearcoatRoughness: 0.15
+            });
+
+            // Ordem de faces do BoxGeometry: [+x, -x, +y, -y, +z(frente), -z(verso)]
+            const cardMaterials = [edgeMaterial, edgeMaterial, edgeMaterial, edgeMaterial, frontMaterial, backMaterial];
+
+            // Geometria no tamanho real de um cartão (CR80, 85.6mm x 53.98mm em polegadas)
+            const geometry = new THREE.BoxGeometry(3.375, 2.125, 0.05, 10, 10, 1);
+            const card = new THREE.Mesh(geometry, cardMaterials);
+            scene.add(card);
+
+            // Interaction Variables
+            let mouseX = 0;
+            let mouseY = 0;
+            let targetRotationX = 0;
+            let targetRotationY = 0;
+
+            const windowHalfX = width / 2;
+            const windowHalfY = height / 2;
+
+            // Event Listeners for Parallax/Tilt
+            container.addEventListener('mousemove', (event) => {
+                const rect = container.getBoundingClientRect();
+                const x = event.clientX - rect.left;
+                const y = event.clientY - rect.top;
+
+                mouseX = (x - width/2);
+                mouseY = (y - height/2);
+
+                // Calcular rotação alvo (limitada)
+                targetRotationY = (mouseX / windowHalfX) * 0.5; // Max 0.5 rad
+                targetRotationX = (mouseY / windowHalfY) * 0.5;
+            });
+
+            container.addEventListener('mouseleave', () => {
+                targetRotationX = 0;
+                targetRotationY = 0;
+            });
+
+            // Animação de entrada inicial
+            gsap.from(card.rotation, {
+                y: Math.PI * 2,
+                duration: 2,
+                ease: "power3.out",
+                delay: 0.5,
+                scrollTrigger: {
+                    trigger: "#showcase",
+                    start: "top 50%"
+                }
+            });
+
+            // Render Loop
+            let clock = new THREE.Clock();
+            
+            function animate() {
+                requestAnimationFrame(animate);
+
+                // Rotação ociosa contínua suave (se o mouse não estiver controlando fortemente)
+                const time = clock.getElapsedTime();
+                
+                // Lerp (Interpolação suave) para a rotação do mouse
+                card.rotation.y += (targetRotationY - card.rotation.y) * 0.05;
+                card.rotation.x += (targetRotationX - card.rotation.x) * 0.05;
+
+                // Adicionar leve flutuação
+                card.position.y = Math.sin(time * 2) * 0.1;
+
+                renderer.render(scene, camera);
+            }
+
+            // Handle Resize
+            window.addEventListener('resize', () => {
+                const newWidth = container.clientWidth;
+                const newHeight = container.clientHeight;
+                renderer.setSize(newWidth, newHeight);
+                camera.aspect = newWidth / newHeight;
+                camera.updateProjectionMatrix();
+            });
+
+            animate();
+        }
+
+        // --------------------------------------------------------
+        // 6. PROXIMITY ANIMATION SYSTEM (mockups & cards reagem à aproximação do cursor)
+        // --------------------------------------------------------
+        function initProximityCards() {
+            const cards = Array.from(document.querySelectorAll('.proximity-card'));
+            if (!cards.length) return;
+
+            const MAX_DISTANCE = 480; // raio de influência em px
+            let mouseX = -9999;
+            let mouseY = -9999;
+            let hasMouse = false;
+
+            const clamp = (v, min, max) => Math.min(max, Math.max(min, v));
+
+            window.addEventListener('mousemove', (e) => {
+                mouseX = e.clientX;
+                mouseY = e.clientY;
+                hasMouse = true;
+            });
+
+            document.addEventListener('mouseleave', () => {
+                hasMouse = false;
+            });
+
+            function tick() {
+                cards.forEach(card => {
+                    const rect = card.getBoundingClientRect();
+                    // Ignora cards fora da tela (evita cálculo/transform desnecessário)
+                    if (rect.bottom < 0 || rect.top > window.innerHeight) return;
+
+                    const cx = rect.left + rect.width / 2;
+                    const cy = rect.top + rect.height / 2;
+                    const dx = hasMouse ? mouseX - cx : MAX_DISTANCE * 2;
+                    const dy = hasMouse ? mouseY - cy : MAX_DISTANCE * 2;
+                    const dist = Math.hypot(dx, dy);
+                    const proximity = hasMouse ? clamp(1 - dist / MAX_DISTANCE, 0, 1) : 0;
+
+                    const inside = hasMouse && mouseX >= rect.left && mouseX <= rect.right && mouseY >= rect.top && mouseY <= rect.bottom;
+
+                    card.style.setProperty('--proximity', proximity.toFixed(3));
+
+                    const maxTilt = inside ? 10 : 4;
+                    const tiltX = clamp(-dy / MAX_DISTANCE, -1, 1) * maxTilt * proximity;
+                    const tiltY = clamp(dx / MAX_DISTANCE, -1, 1) * maxTilt * proximity;
+                    const baseY = parseFloat(card.dataset.baseY || '0');
+                    const baseRotate = parseFloat(card.dataset.baseRotate || '0') * (1 - proximity);
+                    const lift = baseY + (inside ? -8 : 0);
+                    const scale = inside ? 1.02 : 1;
+
+                    card.style.transform = `perspective(1200px) translateY(${lift}px) rotateX(${tiltX.toFixed(2)}deg) rotateY(${tiltY.toFixed(2)}deg) rotateZ(${baseRotate.toFixed(2)}deg) scale(${scale})`;
+
+                    if (inside) {
+                        const mx = ((mouseX - rect.left) / rect.width) * 100;
+                        const my = ((mouseY - rect.top) / rect.height) * 100;
+                        card.style.setProperty('--spot-x', mx.toFixed(1) + '%');
+                        card.style.setProperty('--spot-y', my.toFixed(1) + '%');
+                    }
+                });
+                requestAnimationFrame(tick);
+            }
+
+            requestAnimationFrame(tick);
+        }
+
+        // --------------------------------------------------------
+        // 7. INITIALIZATION
+        // --------------------------------------------------------
+        window.onload = function() {
+            Tracking.trackOpen();
+            renderTemplate();
+
+            // Cada init roda isolado: uma falha em um bloco não deve derrubar os demais
+            try { initAnimations(); } catch (err) { console.error('[initAnimations] falhou:', err); }
+            try { initProximityCards(); } catch (err) { console.error('[initProximityCards] falhou:', err); }
+
+            // Timeout para garantir que o container tenha tamanho renderizado
+            setTimeout(() => {
+                try {
+                    if (typeof THREE !== 'undefined') {
+                        initThreeJS();
+                    } else {
+                        console.error("Three.js não carregou.");
+                    }
+                } catch (err) {
+                    console.error('[initThreeJS] falhou:', err);
+                }
+            }, 100);
+        };
+
+    </script>
+</body>
+</html>
