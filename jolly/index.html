@@ -52,10 +52,15 @@
 
     <style>
         /* Base & Scrollbar */
+        html {
+            overflow-x: hidden;
+            max-width: 100vw;
+        }
         body {
             background-color: #050505;
             color: #FFFFFF;
             overflow-x: hidden;
+            max-width: 100vw;
             -webkit-font-smoothing: antialiased;
         }
 
@@ -244,10 +249,13 @@
 
     <!-- Navbar -->
     <nav class="fixed w-full z-50 glass border-b border-white/5 transition-all duration-300" id="navbar">
-        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+        <div class="max-w-7xl mx-auto px-6 py-3 md:py-0 md:h-20 flex items-center justify-between">
             <div class="flex items-center gap-2">
                 <img src="img/logo-icon.png" alt="Saturno NFC" class="h-9 w-auto">
-                <span class="font-bold text-xl tracking-tight text-white">Saturno <span class="font-light">NFC</span></span>
+                <div class="flex flex-col">
+                    <span class="font-bold text-xl tracking-tight text-white leading-tight">Saturno <span class="font-light">NFC</span></span>
+                    <p class="md:hidden text-xs text-white font-semibold leading-tight">Proposta para: <span class="text-saturno-primary" data-var="empresa">Carregando...</span></p>
+                </div>
             </div>
             <div class="hidden md:flex items-center gap-6 text-sm text-saturno-textMuted font-medium">
                 <p>Proposta para: <span class="text-saturno-primary font-semibold" data-var="empresa">Carregando...</span></p>
@@ -258,19 +266,30 @@
     </nav>
 
     <!-- Hero Section -->
-    <section class="relative h-screen flex items-center justify-center pt-20 overflow-hidden">
+    <section class="relative h-screen flex items-center justify-center pt-28 md:pt-20 overflow-hidden">
         <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center gap-12 relative z-10">
             
-            <div class="flex-1 text-center md:text-left flex flex-col gap-6" id="hero-content">
-                <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-saturno-primary/30 bg-saturno-primary/10 w-fit mx-auto md:mx-0">
+            <!-- Badge mobile: aparece acima do cartão; no desktop some daqui e volta a aparecer dentro do bloco de texto -->
+            <div class="w-full flex justify-center order-2 md:hidden">
+                <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-saturno-primary/30 bg-saturno-primary/10 w-fit">
                     <span class="relative flex h-2 w-2">
                       <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-saturno-primary opacity-75"></span>
                       <span class="relative inline-flex rounded-full h-2 w-2 bg-saturno-primary"></span>
                     </span>
                     <span class="text-xs font-semibold text-saturno-primary tracking-wider uppercase">Proposta Digital Exclusiva</span>
                 </div>
-                
-                <h1 class="text-5xl md:text-7xl font-bold tracking-tighter leading-tight">
+            </div>
+
+            <div class="flex-1 text-center md:text-left flex flex-col gap-6 order-3 md:order-1" id="hero-content">
+                <div class="hidden md:inline-flex items-center gap-2 px-4 py-2 rounded-full border border-saturno-primary/30 bg-saturno-primary/10 w-fit mx-auto md:mx-0">
+                    <span class="relative flex h-2 w-2">
+                      <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-saturno-primary opacity-75"></span>
+                      <span class="relative inline-flex rounded-full h-2 w-2 bg-saturno-primary"></span>
+                    </span>
+                    <span class="text-xs font-semibold text-saturno-primary tracking-wider uppercase">Proposta Digital Exclusiva</span>
+                </div>
+
+                <h1 class="hidden md:block text-5xl md:text-7xl font-bold tracking-tighter leading-tight">
                     O futuro do <br>
                     <span class="text-gradient-primary">networking.</span>
                 </h1>
@@ -280,15 +299,19 @@
                 </p>
                 
                 <div class="flex flex-col sm:flex-row items-center gap-4 mt-4">
-                    <button onclick="document.getElementById('showcase').scrollIntoView()" class="btn-premium w-full sm:w-auto px-8 py-4 bg-saturno-primary text-white rounded-xl font-semibold shadow-glow hover:shadow-glow-lg flex items-center justify-center gap-2">
+                    <button onclick="document.getElementById('showcase').scrollIntoView()" class="hidden md:flex btn-premium w-full sm:w-auto px-8 py-4 bg-saturno-primary text-white rounded-xl font-semibold shadow-glow hover:shadow-glow-lg items-center justify-center gap-2">
                         Explorar Experiência
                         <i data-lucide="arrow-down" class="w-5 h-5"></i>
+                    </button>
+                    <button onclick="document.getElementById('showcase').scrollIntoView()" class="md:hidden flex flex-col items-center gap-1 text-saturno-textMuted">
+                        <i data-lucide="chevron-down" class="w-6 h-6 animate-bounce text-saturno-primary"></i>
+                        <span class="text-xs uppercase tracking-wider">Deslize para ver mais</span>
                     </button>
                 </div>
             </div>
 
             <!-- Hero Image/Abstract (Substituto temporário até o scroll chegar no 3D real) -->
-            <div class="flex-1 w-full h-[400px] md:h-[600px] relative hidden md:block" id="hero-visual">
+            <div class="flex-1 w-full h-[300px] md:h-[600px] relative order-1 md:order-2" id="hero-visual">
                  <div class="absolute inset-0 bg-gradient-to-br from-saturno-primary/20 to-transparent rounded-full blur-3xl opacity-50 animate-pulse"></div>
                  <!-- Placeholder visual elegante -->
                  <div class="w-full h-full flex items-center justify-center relative">
@@ -301,7 +324,7 @@
     </section>
 
     <!-- 3D Showcase Section -->
-    <section id="showcase" class="py-32 relative">
+    <section id="showcase" class="pt-32 pb-12 md:pb-32 relative">
         <div class="max-w-7xl mx-auto px-6">
             <div class="text-center mb-16" id="showcase-text">
                 <h2 class="text-3xl md:text-5xl font-bold mb-4">Seu cartão, reimaginado.</h2>
@@ -311,8 +334,10 @@
             <div class="w-full h-[500px] md:h-[600px] rounded-3xl glass-card relative overflow-hidden flex items-center justify-center" id="three-container-wrapper">
                 <!-- Overlay de instrução -->
                 <div class="absolute bottom-6 left-1/2 transform -translate-x-1/2 flex items-center gap-2 text-sm text-white/50 bg-black/40 px-4 py-2 rounded-full backdrop-blur-md z-10 pointer-events-none">
-                    <i data-lucide="mouse-pointer-click" class="w-4 h-4"></i>
-                    Arraste para interagir
+                    <i data-lucide="mouse-pointer-click" class="w-4 h-4 hidden md:block"></i>
+                    <i data-lucide="sparkles" class="w-4 h-4 md:hidden"></i>
+                    <span class="hidden md:inline">Arraste para interagir</span>
+                    <span class="md:hidden">Vitrine 360° automática</span>
                 </div>
                 
                 <!-- Canvas Three.js -->
@@ -322,7 +347,7 @@
     </section>
 
     <!-- NFC Simulation Section -->
-    <section id="simulation" class="py-32 relative border-y border-white/5 bg-black/40">
+    <section id="simulation" class="pt-12 pb-32 md:pt-32 relative border-y border-white/5 bg-black/40">
         <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center gap-16">
             <div class="flex-1 order-2 md:order-1 relative h-[600px] w-full flex items-center justify-center" id="sim-visuals">
                 
@@ -427,7 +452,7 @@
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch" id="plans-container">
 
                 <!-- Plan 1 -->
-                <div class="plan-card proximity-card glass p-8 rounded-3xl border border-white/5 h-full flex flex-col">
+                <div class="plan-card proximity-card glass p-8 rounded-3xl border border-white/5 h-full hidden md:flex md:flex-col">
                     <div class="mb-8">
                         <h3 class="text-xl font-medium text-zinc-400 mb-1">Plano Essencial</h3>
                         <p class="text-sm text-zinc-500 mb-4">Ter presença digital profissional</p>
@@ -475,12 +500,12 @@
                             <li class="flex items-start gap-3"><i data-lucide="check-circle-2" class="w-5 h-5 text-saturno-primary flex-shrink-0"></i> <span>QR Code impresso nos cartões</span></li>
                             <li class="flex items-start gap-3"><i data-lucide="check-circle-2" class="w-5 h-5 text-saturno-primary flex-shrink-0"></i> <span>Entrega em até 3 a 4 dias úteis</span></li>
                         </ul>
-                        <button onclick="openApprovalModal()" class="btn-premium w-full py-4 bg-saturno-primary text-white rounded-xl font-bold mt-8 shadow-md">Plano Escolhido</button>
+                        <button onclick="openApprovalModal()" class="btn-premium w-full py-4 bg-saturno-primary text-white rounded-xl font-bold mt-8 shadow-md">Aprovar Proposta</button>
                     </div>
                 </div>
 
                 <!-- Plan 3 -->
-                <div class="plan-card proximity-card glass p-8 rounded-3xl border border-white/5 h-full flex flex-col">
+                <div class="plan-card proximity-card glass p-8 rounded-3xl border border-white/5 h-full hidden md:flex md:flex-col">
                     <div class="mb-8">
                         <p class="text-xs font-bold uppercase tracking-wider text-saturno-primary/80 mb-2">Para Grandes Empresas</p>
                         <h3 class="text-xl font-medium text-zinc-400 mb-1">Plano Fora de Órbita</h3>
@@ -1011,7 +1036,10 @@
             });
 
             // Simulation Animation Timeline
+            // No mobile, a animação do celular + cartão roda em loop, reiniciando sozinha
             const tlSim = gsap.timeline({
+                repeat: window.innerWidth < 768 ? -1 : 0,
+                repeatDelay: 1,
                 scrollTrigger: {
                     trigger: "#simulation",
                     start: "top 50%", // Inicia quando o topo da seção chega no meio da tela
@@ -1114,9 +1142,10 @@
             renderer.outputEncoding = THREE.sRGBEncoding;
 
             const textureLoader = new THREE.TextureLoader();
-            // Carrega direto da pasta img: qualquer imagem colocada em img/1.png e img/2.png passa a valer aqui automaticamente
-            const frontTexture = textureLoader.load('img/1.png');
-            const backTexture = textureLoader.load('img/2.png');
+            // Carrega direto da pasta img: qualquer imagem colocada nesses arquivos passa a valer aqui automaticamente
+            // "?v=" evita que o navegador use uma cópia antiga em cache dessas imagens
+            const frontTexture = textureLoader.load('img/1.png?v=' + Date.now());
+            const backTexture = textureLoader.load('img/2.png?v=' + Date.now());
             frontTexture.encoding = THREE.sRGBEncoding;
             backTexture.encoding = THREE.sRGBEncoding;
             frontTexture.anisotropy = renderer.capabilities.getMaxAnisotropy();
@@ -1160,6 +1189,8 @@
             let mouseY = 0;
             let targetRotationX = 0;
             let targetRotationY = 0;
+            const isMobileView = window.innerWidth < 768;
+            let isSpinning = false;
 
             const windowHalfX = width / 2;
             const windowHalfY = height / 2;
@@ -1183,6 +1214,20 @@
                 targetRotationY = 0;
             });
 
+            // No mobile, tocar no cartão dispara a mesma animação de giro da entrada
+            if (isMobileView) {
+                container.addEventListener('click', () => {
+                    if (isSpinning) return;
+                    isSpinning = true;
+                    gsap.to(card.rotation, {
+                        y: '+=' + (Math.PI * 2),
+                        duration: 1.4,
+                        ease: 'power3.out',
+                        onComplete: () => { isSpinning = false; }
+                    });
+                });
+            }
+
             // Animação de entrada inicial
             gsap.from(card.rotation, {
                 y: Math.PI * 2,
@@ -1203,10 +1248,19 @@
 
                 // Rotação ociosa contínua suave (se o mouse não estiver controlando fortemente)
                 const time = clock.getElapsedTime();
-                
-                // Lerp (Interpolação suave) para a rotação do mouse
-                card.rotation.y += (targetRotationY - card.rotation.y) * 0.05;
-                card.rotation.x += (targetRotationX - card.rotation.x) * 0.05;
+
+                // No mobile não há arraste: o cartão gira sozinho em uma vitrine 360° suave e sofisticada
+                // (duas ondas sobrepostas em frequências diferentes evitam um movimento mecânico/repetitivo)
+                if (isMobileView && !isSpinning) {
+                    targetRotationY = Math.sin(time * 0.28) * 0.38 + Math.sin(time * 0.13) * 0.08;
+                    targetRotationX = Math.sin(time * 0.19) * 0.08;
+                }
+
+                // Lerp (Interpolação suave) para a rotação do mouse (pausado durante o giro por toque)
+                if (!isSpinning) {
+                    card.rotation.y += (targetRotationY - card.rotation.y) * 0.035;
+                    card.rotation.x += (targetRotationX - card.rotation.x) * 0.035;
+                }
 
                 // Adicionar leve flutuação
                 card.position.y = Math.sin(time * 2) * 0.1;
