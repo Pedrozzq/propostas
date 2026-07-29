@@ -8,7 +8,6 @@
     <!-- SEO & Meta Tags (Preparado) -->
     <meta name="description" content="Proposta comercial exclusiva Saturno NFC.">
     <meta name="theme-color" content="#000000">
-    <link rel="icon" type="image/png" href="img/logo-icon.png">
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -34,15 +33,15 @@
                             surface: '#111111',
                             surfaceHover: '#1A1A1A',
                             border: '#222222',
-                            primary: '#3F66D9',
-                            primaryGlow: 'rgba(63, 102, 217, 0.4)',
+                            primary: '#7A5CFF',
+                            primaryGlow: 'rgba(122, 92, 255, 0.4)',
                             text: '#FFFFFF',
                             textMuted: '#A1A1AA'
                         }
                     },
                     boxShadow: {
-                        'glow': '0 0 20px rgba(63, 102, 217, 0.3)',
-                        'glow-lg': '0 0 40px rgba(63, 102, 217, 0.5)',
+                        'glow': '0 0 20px rgba(122, 92, 255, 0.3)',
+                        'glow-lg': '0 0 40px rgba(122, 92, 255, 0.5)',
                         'glass': '0 4px 30px rgba(0, 0, 0, 0.5)',
                     }
                 }
@@ -70,7 +69,7 @@
             border-radius: 4px;
         }
         ::-webkit-scrollbar-thumb:hover {
-            background: #3F66D9;
+            background: #7A5CFF;
         }
 
         /* Utilidades Glassmorphism */
@@ -104,12 +103,12 @@
         }
         .blob-1 {
             top: -10%; left: -10%; width: 50vw; height: 50vw;
-            background: radial-gradient(circle, rgba(63,102,217,0.15) 0%, transparent 70%);
+            background: radial-gradient(circle, rgba(122,92,255,0.15) 0%, transparent 70%);
             animation-delay: 0s;
         }
         .blob-2 {
             bottom: -20%; right: -10%; width: 60vw; height: 60vw;
-            background: radial-gradient(circle, rgba(25,51,128,0.2) 0%, transparent 70%);
+            background: radial-gradient(circle, rgba(60,30,150,0.2) 0%, transparent 70%);
             animation-delay: -5s;
         }
 
@@ -138,7 +137,7 @@
             -webkit-text-fill-color: transparent;
         }
         .text-gradient-primary {
-            background: linear-gradient(135deg, #6A88E1 0%, #3F66D9 100%);
+            background: linear-gradient(135deg, #A88DFF 0%, #7A5CFF 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
@@ -166,7 +165,7 @@
             transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         }
         .plan-card:hover {
-            border-color: #3F66D9;
+            border-color: #7A5CFF;
         }
 
         /* Phone Simulation */
@@ -193,7 +192,7 @@
         .ripple-wave {
             position: absolute;
             border-radius: 50%;
-            border: 2px solid #3F66D9;
+            border: 2px solid #7A5CFF;
             opacity: 0;
             pointer-events: none;
         }
@@ -218,14 +217,14 @@
             transform-style: preserve-3d;
             transition: transform 0.2s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.3s ease;
             will-change: transform;
-            filter: drop-shadow(0 0 calc(var(--proximity, 0) * 26px) rgba(63, 102, 217, calc(var(--proximity, 0) * 0.55)));
+            filter: drop-shadow(0 0 calc(var(--proximity, 0) * 26px) rgba(122, 92, 255, calc(var(--proximity, 0) * 0.55)));
         }
         .proximity-card::before {
             content: '';
             position: absolute;
             inset: 0;
             border-radius: inherit;
-            background: radial-gradient(circle at var(--spot-x, 50%) var(--spot-y, 50%), rgba(255, 255, 255, 0.35), rgba(63, 102, 217, 0.25) 40%, transparent 65%);
+            background: radial-gradient(circle at var(--spot-x, 50%) var(--spot-y, 50%), rgba(122, 92, 255, 0.35), transparent 55%);
             opacity: var(--proximity, 0);
             transition: opacity 0.25s ease;
             pointer-events: none;
@@ -246,7 +245,10 @@
     <nav class="fixed w-full z-50 glass border-b border-white/5 transition-all duration-300" id="navbar">
         <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
             <div class="flex items-center gap-2">
-                <img src="img/logo-icon.png" alt="Saturno NFC" class="h-9 w-auto">
+                <!-- Logo Simples CSS -->
+                <div class="w-8 h-8 rounded-full bg-gradient-to-tr from-saturno-primary to-white flex items-center justify-center">
+                    <div class="w-3 h-3 bg-saturno-bg rounded-full"></div>
+                </div>
                 <span class="font-bold text-xl tracking-tight text-white">Saturno <span class="font-light">NFC</span></span>
             </div>
             <div class="hidden md:flex items-center gap-6 text-sm text-saturno-textMuted font-medium">
@@ -292,8 +294,14 @@
                  <div class="absolute inset-0 bg-gradient-to-br from-saturno-primary/20 to-transparent rounded-full blur-3xl opacity-50 animate-pulse"></div>
                  <!-- Placeholder visual elegante -->
                  <div class="w-full h-full flex items-center justify-center relative">
-                     <div class="proximity-card w-80 md:w-96 aspect-[1.586/1] rounded-2xl overflow-hidden border border-white/10 shadow-2xl" data-base-rotate="12">
-                         <img src="img/1.png" alt="Cartão Saturno NFC" class="w-full h-full object-cover pointer-events-none select-none">
+                     <div class="proximity-card w-64 h-96 glass-card rounded-2xl flex flex-col justify-between p-6" data-base-rotate="12">
+                         <div class="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center">
+                            <i data-lucide="nfc" class="text-saturno-primary w-6 h-6"></i>
+                         </div>
+                         <div>
+                            <div class="h-2 w-24 bg-white/20 rounded mb-2"></div>
+                            <div class="h-2 w-32 bg-white/10 rounded"></div>
+                         </div>
                      </div>
                  </div>
             </div>
@@ -377,9 +385,12 @@
                 </div>
 
                 <!-- Card Approaching (outer: GSAP approach animation; inner: proximity tilt/glow) -->
-                <div class="absolute right-0 top-1/2 -translate-y-1/2 translate-x-32 w-60 h-[151px] z-20" id="sim-card">
-                    <div class="proximity-card w-full h-full rounded-xl overflow-hidden border border-white/10 shadow-2xl">
-                        <img src="img/1.png" alt="Cartão Saturno NFC" class="w-full h-full object-cover pointer-events-none select-none">
+                <div class="absolute right-0 top-1/2 -translate-y-1/2 translate-x-32 w-48 h-72 z-20" id="sim-card">
+                    <div class="proximity-card glass-card w-full h-full rounded-xl border-t border-l border-white/20 flex items-center justify-center shadow-2xl">
+                        <div class="rotate-90 text-2xl font-bold text-white/50 tracking-widest flex items-center gap-4">
+                            <i data-lucide="nfc" class="w-8 h-8 text-saturno-primary"></i>
+                            SATURNO
+                        </div>
                     </div>
                 </div>
 
@@ -424,89 +435,73 @@
                 <p class="text-saturno-textMuted max-w-2xl mx-auto">Planos dimensionados para o tamanho da sua ambição. Preços exclusivos para <span class="text-white font-medium" data-var="empresa">Empresa</span>.</p>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch" id="plans-container">
-
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-center" id="plans-container">
+                
                 <!-- Plan 1 -->
-                <div class="plan-card proximity-card glass p-8 rounded-3xl border border-white/5 h-full flex flex-col">
+                <div class="plan-card proximity-card glass p-8 rounded-3xl border border-white/5 h-[600px] flex flex-col">
                     <div class="mb-8">
-                        <h3 class="text-xl font-medium text-zinc-400 mb-1">Plano Essencial</h3>
-                        <p class="text-sm text-zinc-500 mb-4">Ter presença digital profissional</p>
-                        <p class="text-xs uppercase tracking-wider text-zinc-600 mb-1">Cartão NFC - Plano Essencial</p>
+                        <h3 class="text-xl font-medium text-zinc-400 mb-2">Essencial</h3>
                         <div class="flex items-baseline gap-2">
                             <span class="text-4xl font-bold text-white">R$ <span data-var="valorEssencial">--</span></span>
                         </div>
-                        <p class="text-sm text-zinc-500 mt-2">Em até 2x sem juros de R$200,00</p>
+                        <p class="text-sm text-zinc-500 mt-2">Pagamento único</p>
                     </div>
-
+                    
                     <ul class="space-y-4 flex-1 text-sm text-zinc-300">
-                        <li class="flex items-start gap-3"><i data-lucide="check-circle-2" class="w-5 h-5 text-zinc-500 flex-shrink-0"></i> <span>4 cartões NFC personalizados</span></li>
-                        <li class="flex items-start gap-3"><i data-lucide="check-circle-2" class="w-5 h-5 text-zinc-500 flex-shrink-0"></i> <span>Site exclusivo com domínio próprio</span></li>
-                        <li class="flex items-start gap-3"><i data-lucide="check-circle-2" class="w-5 h-5 text-zinc-500 flex-shrink-0"></i> <span>Design profissional e adaptado para celulares</span></li>
-                        <li class="flex items-start gap-3"><i data-lucide="check-circle-2" class="w-5 h-5 text-zinc-500 flex-shrink-0"></i> <span>Botões animados e efeitos visuais modernos</span></li>
-                        <li class="flex items-start gap-3"><i data-lucide="check-circle-2" class="w-5 h-5 text-zinc-500 flex-shrink-0"></i> <span>WhatsApp, localização, redes sociais e agendamento</span></li>
-                        <li class="flex items-start gap-3"><i data-lucide="check-circle-2" class="w-5 h-5 text-zinc-500 flex-shrink-0"></i> <span>Opção para salvar seu contato com apenas um toque</span></li>
-                        <li class="flex items-start gap-3"><i data-lucide="check-circle-2" class="w-5 h-5 text-zinc-500 flex-shrink-0"></i> <span>QR Code integrado aos cartões</span></li>
-                        <li class="flex items-start gap-3"><i data-lucide="check-circle-2" class="w-5 h-5 text-zinc-500 flex-shrink-0"></i> <span>Entrega em até 2 a 3 dias úteis</span></li>
-                        <li class="flex items-start gap-3"><i data-lucide="check-circle-2" class="w-5 h-5 text-zinc-500 flex-shrink-0"></i> <span>Você recebe tudo configurado e funcionando</span></li>
+                        <li class="flex items-start gap-3"><i data-lucide="check-circle-2" class="w-5 h-5 text-zinc-500 flex-shrink-0"></i> <span>1 Cartão NFC Premium</span></li>
+                        <li class="flex items-start gap-3"><i data-lucide="check-circle-2" class="w-5 h-5 text-zinc-500 flex-shrink-0"></i> <span>Página de Perfil Standard</span></li>
+                        <li class="flex items-start gap-3"><i data-lucide="check-circle-2" class="w-5 h-5 text-zinc-500 flex-shrink-0"></i> <span>QR Code Dinâmico</span></li>
+                        <li class="flex items-start gap-3"><i data-lucide="check-circle-2" class="w-5 h-5 text-zinc-500 flex-shrink-0"></i> <span>Atualizações ilimitadas</span></li>
+                        <li class="flex items-start gap-3 opacity-50"><i data-lucide="x" class="w-5 h-5 text-zinc-700 flex-shrink-0"></i> <span>Domínio Personalizado</span></li>
+                        <li class="flex items-start gap-3 opacity-50"><i data-lucide="x" class="w-5 h-5 text-zinc-700 flex-shrink-0"></i> <span>Painel de Relatórios</span></li>
                     </ul>
-                    <button class="w-full py-3 rounded-xl border border-white/10 hover:bg-white/5 transition-colors mt-8 font-medium">Escolher Plano</button>
+                    <button class="w-full py-3 rounded-xl border border-white/10 hover:bg-white/5 transition-colors mt-8 font-medium">Selecionar Essencial</button>
                 </div>
 
-                <!-- Plan 2 (Custo Benefício) -->
-                <div class="plan-card proximity-card glass-card p-1 rounded-3xl relative h-full md:-translate-y-4 shadow-glow z-10" data-base-y="-16">
+                <!-- Plan 2 (Recommended) -->
+                <div class="plan-card proximity-card glass-card p-1 rounded-3xl relative h-[650px] md:-translate-y-4 shadow-glow z-10" data-base-y="-16">
                     <div class="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-saturno-primary text-white text-xs font-bold px-4 py-1 rounded-full uppercase tracking-wider">
-                        Custo Benefício
+                        Recomendado
                     </div>
                     <div class="bg-saturno-surface/90 backdrop-blur-xl h-full w-full rounded-[23px] p-8 flex flex-col border border-white/10">
                         <div class="mb-8">
-                            <h3 class="text-2xl font-bold text-saturno-primary mb-1">Plano Profissional</h3>
-                            <p class="text-sm text-zinc-400 mb-4">Captar clientes e facilitar atendimentos</p>
-                            <p class="text-xs uppercase tracking-wider text-zinc-500 mb-1">Cartão NFC - Plano Profissional</p>
+                            <h3 class="text-2xl font-bold text-saturno-primary mb-2">Profissional</h3>
                             <div class="flex items-baseline gap-2">
                                 <span class="text-5xl font-bold text-white">R$ <span data-var="valorProfissional">--</span></span>
                             </div>
-                            <p class="text-sm text-zinc-500 mt-2">Em até 2x sem juros de R$400,00</p>
+                            <p class="text-sm text-zinc-500 mt-2">Pagamento único + taxa anual p/ domínio</p>
                         </div>
-
+                        
                         <ul class="space-y-4 flex-1 text-sm text-white">
-                            <li class="flex items-start gap-3"><i data-lucide="check-circle-2" class="w-5 h-5 text-saturno-primary flex-shrink-0"></i> <span>12 cartões NFC personalizados</span></li>
-                            <li class="flex items-start gap-3"><i data-lucide="check-circle-2" class="w-5 h-5 text-saturno-primary flex-shrink-0"></i> <span>3 placas NFC para Google, Wi-Fi e agendamento</span></li>
-                            <li class="flex items-start gap-3"><i data-lucide="check-circle-2" class="w-5 h-5 text-saturno-primary flex-shrink-0"></i> <span>Tudo do plano Essencial incluso</span></li>
-                            <li class="flex items-start gap-3"><i data-lucide="check-circle-2" class="w-5 h-5 text-saturno-primary flex-shrink-0"></i> <span>Site profissional com domínio próprio</span></li>
-                            <li class="flex items-start gap-3"><i data-lucide="check-circle-2" class="w-5 h-5 text-saturno-primary flex-shrink-0"></i> <span>Animações avançadas e experiência visual diferenciada</span></li>
-                            <li class="flex items-start gap-3"><i data-lucide="check-circle-2" class="w-5 h-5 text-saturno-primary flex-shrink-0"></i> <span>QR Code impresso nos cartões</span></li>
-                            <li class="flex items-start gap-3"><i data-lucide="check-circle-2" class="w-5 h-5 text-saturno-primary flex-shrink-0"></i> <span>Entrega em até 3 a 4 dias úteis</span></li>
+                            <li class="flex items-start gap-3"><i data-lucide="check-circle-2" class="w-5 h-5 text-saturno-primary flex-shrink-0"></i> <span>Até 3 Cartões NFC Premium</span></li>
+                            <li class="flex items-start gap-3"><i data-lucide="check-circle-2" class="w-5 h-5 text-saturno-primary flex-shrink-0"></i> <span>Página Web Customizada (Identidade Visual)</span></li>
+                            <li class="flex items-start gap-3"><i data-lucide="check-circle-2" class="w-5 h-5 text-saturno-primary flex-shrink-0"></i> <span>Domínio Personalizado (ex: card.empresa.com)</span></li>
+                            <li class="flex items-start gap-3"><i data-lucide="check-circle-2" class="w-5 h-5 text-saturno-primary flex-shrink-0"></i> <span>Painel de Estatísticas Básicas</span></li>
+                            <li class="flex items-start gap-3"><i data-lucide="check-circle-2" class="w-5 h-5 text-saturno-primary flex-shrink-0"></i> <span>Suporte Prioritário WhatsApp</span></li>
+                            <li class="flex items-start gap-3 opacity-50"><i data-lucide="x" class="w-5 h-5 text-zinc-700 flex-shrink-0"></i> <span>Gestão de Equipes</span></li>
                         </ul>
-                        <button class="btn-premium w-full py-4 bg-saturno-primary text-white rounded-xl font-bold mt-8 shadow-md">Escolher Plano</button>
+                        <button class="btn-premium w-full py-4 bg-saturno-primary text-white rounded-xl font-bold mt-8 shadow-md">Recomendar Aprovação</button>
                     </div>
                 </div>
 
                 <!-- Plan 3 -->
-                <div class="plan-card proximity-card glass p-8 rounded-3xl border border-white/5 h-full flex flex-col">
+                <div class="plan-card proximity-card glass p-8 rounded-3xl border border-white/5 h-[600px] flex flex-col">
                     <div class="mb-8">
-                        <p class="text-xs font-bold uppercase tracking-wider text-saturno-primary/80 mb-2">Para Grandes Empresas</p>
-                        <h3 class="text-xl font-medium text-zinc-400 mb-1">Plano Fora de Órbita</h3>
-                        <p class="text-sm text-zinc-500 mb-4">Digitalizar toda a operação da empresa</p>
-                        <p class="text-xs uppercase tracking-wider text-zinc-600 mb-1">Cartão NFC - Plano Fora de Órbita</p>
+                        <h3 class="text-xl font-medium text-zinc-400 mb-2">Fora de Órbita</h3>
                         <div class="flex items-baseline gap-2">
                             <span class="text-4xl font-bold text-white">R$ <span data-var="valorOrbita">--</span></span>
                         </div>
-                        <p class="text-sm text-zinc-500 mt-2">Em até 4x sem juros de R$500,00</p>
+                        <p class="text-sm text-zinc-500 mt-2">Para equipes completas</p>
                     </div>
-
+                    
                     <ul class="space-y-4 flex-1 text-sm text-zinc-300">
-                        <li class="flex items-start gap-3"><i data-lucide="check-circle-2" class="w-5 h-5 text-zinc-500 flex-shrink-0"></i> <span>30 cartões NFC personalizados</span></li>
-                        <li class="flex items-start gap-3"><i data-lucide="check-circle-2" class="w-5 h-5 text-zinc-500 flex-shrink-0"></i> <span>30 tags NFC para mesas, cardápios, quartos ou pontos de atendimento</span></li>
-                        <li class="flex items-start gap-3"><i data-lucide="check-circle-2" class="w-5 h-5 text-zinc-500 flex-shrink-0"></i> <span>1 chaveiro NFC direcionado para o Instagram</span></li>
-                        <li class="flex items-start gap-3"><i data-lucide="check-circle-2" class="w-5 h-5 text-zinc-500 flex-shrink-0"></i> <span>Tudo do plano Profissional incluso</span></li>
-                        <li class="flex items-start gap-3"><i data-lucide="check-circle-2" class="w-5 h-5 text-zinc-500 flex-shrink-0"></i> <span>Site profissional sob medida, com identidade exclusiva e domínio próprio</span></li>
-                        <li class="flex items-start gap-3"><i data-lucide="check-circle-2" class="w-5 h-5 text-zinc-500 flex-shrink-0"></i> <span>Animações imersivas e experiência visual premium</span></li>
-                        <li class="flex items-start gap-3"><i data-lucide="check-circle-2" class="w-5 h-5 text-zinc-500 flex-shrink-0"></i> <span>Catálogo, cardápio ou página de apresentação personalizada</span></li>
-                        <li class="flex items-start gap-3"><i data-lucide="check-circle-2" class="w-5 h-5 text-zinc-500 flex-shrink-0"></i> <span>QR Code integrado aos materiais</span></li>
-                        <li class="flex items-start gap-3"><i data-lucide="check-circle-2" class="w-5 h-5 text-zinc-500 flex-shrink-0"></i> <span>Relatório de acessos, cliques e interações</span></li>
-                        <li class="flex items-start gap-3"><i data-lucide="check-circle-2" class="w-5 h-5 text-zinc-500 flex-shrink-0"></i> <span>Entrega em até 4 a 5 dias úteis</span></li>
+                        <li class="flex items-start gap-3"><i data-lucide="check-circle-2" class="w-5 h-5 text-zinc-500 flex-shrink-0"></i> <span>Cartões Ilimitados (Pacotes sob demanda)</span></li>
+                        <li class="flex items-start gap-3"><i data-lucide="check-circle-2" class="w-5 h-5 text-zinc-500 flex-shrink-0"></i> <span>Dashboard de Gestão de Equipe</span></li>
+                        <li class="flex items-start gap-3"><i data-lucide="check-circle-2" class="w-5 h-5 text-zinc-500 flex-shrink-0"></i> <span>Relatórios Avançados (Cliques, Origem)</span></li>
+                        <li class="flex items-start gap-3"><i data-lucide="check-circle-2" class="w-5 h-5 text-zinc-500 flex-shrink-0"></i> <span>Integração CRM via Webhook</span></li>
+                        <li class="flex items-start gap-3"><i data-lucide="check-circle-2" class="w-5 h-5 text-zinc-500 flex-shrink-0"></i> <span>Design Exclusivo em Metal (Opcional)</span></li>
                     </ul>
-                    <button class="w-full py-3 rounded-xl border border-white/10 hover:bg-white/5 transition-colors mt-8 font-medium">Agendar Reunião Técnica</button>
+                    <button class="w-full py-3 rounded-xl border border-white/10 hover:bg-white/5 transition-colors mt-8 font-medium">Agendar Reunião Ténica</button>
                 </div>
             </div>
         </div>
@@ -555,7 +550,7 @@
                 <div class="relative border-l border-white/20 ml-4 space-y-8" id="process-timeline">
                     <!-- Step 1 -->
                     <div class="relative pl-8 timeline-step">
-                        <div class="absolute w-4 h-4 bg-saturno-primary rounded-full -left-[9px] top-1 shadow-[0_0_10px_#3F66D9]"></div>
+                        <div class="absolute w-4 h-4 bg-saturno-primary rounded-full -left-[9px] top-1 shadow-[0_0_10px_#7A5CFF]"></div>
                         <h4 class="text-lg font-bold text-white">Aprovação da Proposta</h4>
                         <p class="text-sm text-zinc-400 mt-1">Você aceita esta proposta digitalmente.</p>
                     </div>
@@ -575,7 +570,7 @@
                     <div class="relative pl-8 timeline-step opacity-50">
                         <div class="absolute w-4 h-4 bg-zinc-700 rounded-full -left-[9px] top-1 border-2 border-saturno-bg"></div>
                         <h4 class="text-lg font-bold text-white">Lançamento</h4>
-                        <p class="text-sm text-zinc-400 mt-1">Seus cartões são enviados prontos para uso.</p>
+                        <p class="text-sm text-zinc-400 mt-1">Seus cartões são enviados para <span data-var="cidade">--</span> prontos para uso.</p>
                     </div>
                 </div>
             </div>
@@ -588,7 +583,7 @@
             <h2 class="text-4xl font-bold mb-6">Pronto para dar o próximo passo?</h2>
             <p class="text-zinc-400 mb-10 text-lg">Ao aprovar, iniciaremos o processo de onboarding imediatamente.</p>
             
-            <button onclick="openApprovalModal()" class="btn-premium px-12 py-5 bg-gradient-to-r from-saturno-primary to-blue-700 text-white rounded-2xl font-bold text-xl shadow-glow-lg hover:scale-105 transform transition-all duration-300">
+            <button onclick="openApprovalModal()" class="btn-premium px-12 py-5 bg-gradient-to-r from-saturno-primary to-purple-600 text-white rounded-2xl font-bold text-xl shadow-glow-lg hover:scale-105 transform transition-all duration-300">
                 Aprovar Proposta
             </button>
         </div>
@@ -614,7 +609,7 @@
                 
                 <div class="flex gap-4">
                     <button onclick="closeApprovalModal()" class="flex-1 py-3 rounded-xl border border-white/10 hover:bg-white/5 text-sm font-medium transition-colors">Cancelar</button>
-                    <button onclick="confirmApproval()" class="flex-1 py-3 rounded-xl bg-saturno-primary text-white text-sm font-bold shadow-glow hover:bg-blue-700 transition-colors">Sim, Aprovar</button>
+                    <button onclick="confirmApproval()" class="flex-1 py-3 rounded-xl bg-saturno-primary text-white text-sm font-bold shadow-glow hover:bg-purple-600 transition-colors">Sim, Aprovar</button>
                 </div>
             </div>
 
@@ -664,14 +659,15 @@
         // 1. DATA STATE & TEMPLATE ENGINE
         // --------------------------------------------------------
         const clientData = {
-            empresa: "Carol Faria Personal",
-            responsavel: "Carol Faria",
+            empresa: "TechCorp Inovações",
+            responsavel: "Gabriel Silva",
             cnpj: "12.345.678/0001-99",
             telefone: "(11) 99999-9999",
-            email: "carol@carolfariapersonal.com",
-            valorEssencial: "400",
-            valorProfissional: "800",
-            valorOrbita: "2.000"
+            email: "gabriel@techcorp.com",
+            cidade: "São Paulo, SP",
+            valorEssencial: "349,00",
+            valorProfissional: "899,00",
+            valorOrbita: "Sob Consulta"
         };
 
         function renderTemplate() {
@@ -750,16 +746,13 @@
         function confirmApproval() {
             Tracking.trackApprove();
             Tracking.createProductionOrder();
-
+            
             // Trocar UI no modal
             stateConfirm.classList.add('hidden');
             stateSuccess.classList.remove('hidden');
             stateSuccess.classList.add('flex');
-
-            // Envia a confirmação de aprovação via WhatsApp para a Saturno NFC
-            const whatsappNumber = '5531920067518';
-            const whatsappMessage = encodeURIComponent('Aprovado ✅');
-            window.open(`https://wa.me/${whatsappNumber}?text=${whatsappMessage}`, '_blank');
+            
+            // Disparar confetes ou feedback visual extra (opcional)
         }
 
         function trackPayment(method) {
@@ -904,7 +897,7 @@
             directionalLight.position.set(5, 5, 5);
             scene.add(directionalLight);
 
-            const pointLight = new THREE.PointLight(0x3F66D9, 2, 20); // Luz roxa para glow
+            const pointLight = new THREE.PointLight(0x7A5CFF, 2, 20); // Luz roxa para glow
             pointLight.position.set(-2, 2, 2);
             scene.add(pointLight);
 
@@ -912,53 +905,57 @@
             pointLight2.position.set(2, -2, 2);
             scene.add(pointLight2);
 
-            // Texturas reais do cartão (frente e verso) vindas da pasta img
-            renderer.outputEncoding = THREE.sRGBEncoding;
-
-            const textureLoader = new THREE.TextureLoader();
-            const frontTexture = textureLoader.load('img/1.png');
-            const backTexture = textureLoader.load('img/2.png');
-            frontTexture.encoding = THREE.sRGBEncoding;
-            backTexture.encoding = THREE.sRGBEncoding;
-            frontTexture.anisotropy = renderer.capabilities.getMaxAnisotropy();
-            backTexture.anisotropy = renderer.capabilities.getMaxAnisotropy();
-            // A face traseira (-z) do BoxGeometry sai espelhada; corrige invertendo o U
-            backTexture.wrapS = THREE.RepeatWrapping;
-            backTexture.repeat.x = -1;
-            backTexture.offset.x = 1;
-
-            // Material das bordas (canto do cartão em PVC escuro)
-            const edgeMaterial = new THREE.MeshPhysicalMaterial({
-                color: 0x0a0a12,
-                metalness: 0.4,
-                roughness: 0.5,
-                clearcoat: 0.3,
-                clearcoatRoughness: 0.2
+            // Material do Cartão (Plástico fosco premium/Metal escuro)
+            const material = new THREE.MeshPhysicalMaterial({
+                color: 0x111111,
+                metalness: 0.6,
+                roughness: 0.3,
+                clearcoat: 0.2,
+                clearcoatRoughness: 0.1,
+                side: THREE.DoubleSide
             });
 
-            // Frente e verso: laminado fosco premium com leve verniz (clearcoat)
-            const frontMaterial = new THREE.MeshPhysicalMaterial({
-                map: frontTexture,
-                metalness: 0.05,
-                roughness: 0.35,
-                clearcoat: 0.6,
-                clearcoatRoughness: 0.15
-            });
-            const backMaterial = new THREE.MeshPhysicalMaterial({
-                map: backTexture,
-                metalness: 0.05,
-                roughness: 0.35,
-                clearcoat: 0.6,
-                clearcoatRoughness: 0.15
-            });
-
-            // Ordem de faces do BoxGeometry: [+x, -x, +y, -y, +z(frente), -z(verso)]
-            const cardMaterials = [edgeMaterial, edgeMaterial, edgeMaterial, edgeMaterial, frontMaterial, backMaterial];
-
-            // Geometria no tamanho real de um cartão (CR80, 85.6mm x 53.98mm em polegadas)
+            // Geometria (Box com cantos arredondados simulados por segments ou shape, usaremos Box simples p/ performance em script único, compensado por bevels se tivéssemos carregador externo. Aqui Box simples com subdivisões)
             const geometry = new THREE.BoxGeometry(3.375, 2.125, 0.05, 10, 10, 1);
-            const card = new THREE.Mesh(geometry, cardMaterials);
+            const card = new THREE.Mesh(geometry, material);
             scene.add(card);
+
+            // Adicionar logo simulada via textura canvas (para não depender de assets externos)
+            const logoCanvas = document.createElement('canvas');
+            logoCanvas.width = 512; logoCanvas.height = 256;
+            const ctx = logoCanvas.getContext('2d');
+            
+            // Fundo transparente
+            ctx.fillStyle = 'rgba(0,0,0,0)';
+            ctx.fillRect(0,0, 512, 256);
+            
+            // Texto
+            ctx.fillStyle = '#FFFFFF';
+            ctx.font = 'bold 40px Inter, sans-serif';
+            ctx.textAlign = 'center';
+            ctx.textBaseline = 'middle';
+            ctx.fillText('SATURNO', 256, 128);
+            
+            // Símbolo NFC simples
+            ctx.strokeStyle = '#7A5CFF';
+            ctx.lineWidth = 4;
+            ctx.beginPath(); ctx.arc(256, 180, 10, 0, Math.PI*2); ctx.stroke();
+            ctx.beginPath(); ctx.arc(256, 180, 20, 0, Math.PI*1.5); ctx.stroke();
+            ctx.beginPath(); ctx.arc(256, 180, 30, 0, Math.PI*1.2); ctx.stroke();
+
+            const logoTexture = new THREE.CanvasTexture(logoCanvas);
+            
+            // Criar um plano fininho por cima para o logo (Decalque)
+            const decalGeometry = new THREE.PlaneGeometry(3.3, 2.1);
+            const decalMaterial = new THREE.MeshBasicMaterial({
+                map: logoTexture,
+                transparent: true,
+                opacity: 0.8,
+                depthWrite: false
+            });
+            const decal = new THREE.Mesh(decalGeometry, decalMaterial);
+            decal.position.z = 0.026; // Levemente à frente da face
+            card.add(decal);
 
             // Interaction Variables
             let mouseX = 0;
