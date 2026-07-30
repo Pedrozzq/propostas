@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Saturno NFC | Proposta Comercial</title>
+    <title>Saturno NFC | Viaje Sem Falir</title>
     
     <!-- SEO & Meta Tags (Preparado) -->
     <meta name="description" content="Proposta comercial exclusiva Saturno NFC.">
@@ -52,10 +52,15 @@
 
     <style>
         /* Base & Scrollbar */
+        html {
+            overflow-x: hidden;
+            max-width: 100vw;
+        }
         body {
             background-color: #050505;
             color: #FFFFFF;
             overflow-x: hidden;
+            max-width: 100vw;
             -webkit-font-smoothing: antialiased;
         }
 
@@ -265,7 +270,7 @@
         <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center gap-12 relative z-10">
             
             <!-- Badge mobile: aparece acima do cartão; no desktop some daqui e volta a aparecer dentro do bloco de texto -->
-            <div class="w-full flex justify-center order-1 md:hidden">
+            <div class="w-full flex justify-center order-2 md:hidden">
                 <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-saturno-primary/30 bg-saturno-primary/10 w-fit">
                     <span class="relative flex h-2 w-2">
                       <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-saturno-primary opacity-75"></span>
@@ -294,15 +299,19 @@
                 </p>
                 
                 <div class="flex flex-col sm:flex-row items-center gap-4 mt-4">
-                    <button onclick="document.getElementById('showcase').scrollIntoView()" class="btn-premium w-full sm:w-auto px-8 py-4 bg-saturno-primary text-white rounded-xl font-semibold shadow-glow hover:shadow-glow-lg flex items-center justify-center gap-2">
+                    <button onclick="document.getElementById('showcase').scrollIntoView()" class="hidden md:flex btn-premium w-full sm:w-auto px-8 py-4 bg-saturno-primary text-white rounded-xl font-semibold shadow-glow hover:shadow-glow-lg items-center justify-center gap-2">
                         Explorar Experiência
                         <i data-lucide="arrow-down" class="w-5 h-5"></i>
+                    </button>
+                    <button onclick="document.getElementById('showcase').scrollIntoView()" class="md:hidden flex flex-col items-center gap-1 text-saturno-textMuted">
+                        <i data-lucide="chevron-down" class="w-6 h-6 animate-bounce text-saturno-primary"></i>
+                        <span class="text-xs uppercase tracking-wider">Deslize para ver mais</span>
                     </button>
                 </div>
             </div>
 
             <!-- Hero Image/Abstract (Substituto temporário até o scroll chegar no 3D real) -->
-            <div class="flex-1 w-full h-[300px] md:h-[600px] relative order-2 md:order-2" id="hero-visual">
+            <div class="flex-1 w-full h-[300px] md:h-[600px] relative order-1 md:order-2" id="hero-visual">
                  <div class="absolute inset-0 bg-gradient-to-br from-saturno-primary/20 to-transparent rounded-full blur-3xl opacity-50 animate-pulse"></div>
                  <!-- Placeholder visual elegante -->
                  <div class="w-full h-full flex items-center justify-center relative">
@@ -315,7 +324,7 @@
     </section>
 
     <!-- 3D Showcase Section -->
-    <section id="showcase" class="py-32 relative">
+    <section id="showcase" class="pt-32 pb-12 md:pb-32 relative">
         <div class="max-w-7xl mx-auto px-6">
             <div class="text-center mb-16" id="showcase-text">
                 <h2 class="text-3xl md:text-5xl font-bold mb-4">Seu cartão, reimaginado.</h2>
@@ -338,7 +347,7 @@
     </section>
 
     <!-- NFC Simulation Section -->
-    <section id="simulation" class="py-32 relative border-y border-white/5 bg-black/40">
+    <section id="simulation" class="pt-12 pb-32 md:pt-32 relative border-y border-white/5 bg-black/40">
         <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center gap-16">
             <div class="flex-1 order-2 md:order-1 relative h-[600px] w-full flex items-center justify-center" id="sim-visuals">
                 
@@ -436,8 +445,8 @@
     <section id="plans" class="py-32 relative">
         <div class="max-w-7xl mx-auto px-6">
             <div class="text-center mb-20">
-                <h2 class="text-3xl md:text-5xl font-bold mb-4">Escolha sua órbita.</h2>
-                <p class="text-saturno-textMuted max-w-2xl mx-auto">Planos dimensionados para o tamanho da sua ambição. Preços exclusivos para <span class="text-white font-medium" data-var="empresa">Empresa</span>.</p>
+                <h2 class="text-3xl md:text-5xl font-bold mb-4">Seu projeto está pronto para decolar.</h2>
+                <p class="text-saturno-textMuted max-w-2xl mx-auto">A seguir, você encontrará todos os detalhes da solução preparada para a <span class="text-white font-medium" data-var="empresa">Empresa</span>. Após a aprovação, iniciaremos imediatamente a produção e a implantação do projeto.</p>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch" id="plans-container">
@@ -549,9 +558,12 @@
                         <span class="text-zinc-400">Prazo de Produção</span>
                         <span class="font-medium text-saturno-primary">2 a 3 dias úteis</span>
                     </div>
-                    <div class="flex justify-between items-center border-b border-white/10 pb-4">
+                    <div class="flex justify-between items-start border-b border-white/10 pb-4">
                         <span class="text-zinc-400">Garantia</span>
-                        <span class="font-medium">1 Ano (Cartões NFC)</span>
+                        <div class="text-right">
+                            <span class="font-medium block">12 Meses (Cartões NFC)</span>
+                            <span class="text-xs text-zinc-500 block mt-1 max-w-[220px]">Garantia sobre falhas de fabricação e funcionamento.</span>
+                        </div>
                     </div>
                     
                     <div class="pt-4 flex gap-4">
@@ -582,7 +594,7 @@
                     <div class="relative pl-8 timeline-step opacity-50">
                         <div class="absolute w-4 h-4 bg-zinc-700 rounded-full -left-[9px] top-1 border-2 border-saturno-bg"></div>
                         <h4 class="text-lg font-bold text-white">Desenvolvimento</h4>
-                        <p class="text-sm text-zinc-400 mt-1">Criamos seu perfil digital e gravamos os cartões físicos.</p>
+                        <p class="text-sm text-zinc-400 mt-1">Criamos seu site totalmente personalizado e gravamos os cartões físicos.</p>
                     </div>
                     <!-- Step 4 -->
                     <div class="relative pl-8 timeline-step opacity-50">
@@ -720,30 +732,27 @@
         </div>
 
         <div style="margin-bottom:32px;">
-            <div style="font-size:11px; text-transform:uppercase; letter-spacing:1px; color:#666; margin-bottom:12px;">Planos disponíveis</div>
+            <div style="font-size:11px; text-transform:uppercase; letter-spacing:1px; color:#666; margin-bottom:12px;">Plano Escolhido</div>
 
-            <div style="border:1px solid #2a2a2a; border-radius:12px; padding:20px; margin-bottom:12px;">
-                <div style="display:flex; justify-content:space-between; align-items:baseline;">
-                    <span style="font-size:16px; font-weight:bold;">Plano Essencial <span style="font-size:10px; background:#3F66D9; color:#fff; padding:2px 8px; border-radius:999px; margin-left:8px;">RECOMENDADO</span></span>
-                    <span style="font-size:22px; font-weight:bold;">R$ <span data-var="valorEssencial">--</span></span>
+            <div style="border:1px solid #3F66D9; border-radius:12px; padding:24px;">
+                <div style="display:flex; justify-content:space-between; align-items:baseline; margin-bottom:6px;">
+                    <span style="font-size:20px; font-weight:bold;">Plano Essencial</span>
+                    <span style="font-size:26px; font-weight:bold;">R$ <span data-var="valorEssencial">--</span></span>
                 </div>
-                <div style="font-size:12px; color:#999; margin-top:8px;">4 cartões NFC personalizados · Site exclusivo com domínio próprio · WhatsApp, redes sociais e agendamento · Entrega em até 2 a 3 dias úteis</div>
-            </div>
+                <div style="width:60px; height:2px; background:#3F66D9; margin-bottom:16px;"></div>
+                <div style="font-size:12px; color:#3F66D9; margin-bottom:16px;">Em até 2x sem juros de R$200,00</div>
 
-            <div style="border:1px solid #2a2a2a; border-radius:12px; padding:20px; margin-bottom:12px;">
-                <div style="display:flex; justify-content:space-between; align-items:baseline;">
-                    <span style="font-size:16px; font-weight:bold;">Plano Profissional</span>
-                    <span style="font-size:22px; font-weight:bold;">R$ <span data-var="valorProfissional">--</span></span>
-                </div>
-                <div style="font-size:12px; color:#999; margin-top:8px;">12 cartões NFC personalizados · 3 placas NFC (Google, Wi-Fi, agendamento) · Site profissional com domínio próprio · Entrega em até 3 a 4 dias úteis</div>
-            </div>
-
-            <div style="border:1px solid #2a2a2a; border-radius:12px; padding:20px;">
-                <div style="display:flex; justify-content:space-between; align-items:baseline;">
-                    <span style="font-size:16px; font-weight:bold;">Plano Fora de Órbita</span>
-                    <span style="font-size:22px; font-weight:bold;">R$ <span data-var="valorOrbita">--</span></span>
-                </div>
-                <div style="font-size:12px; color:#999; margin-top:8px;">30 cartões NFC personalizados · 30 tags NFC · Site sob medida · Relatórios de acessos e interações</div>
+                <ul style="list-style:none; padding:0; margin:0; font-size:13px; color:#ccc;">
+                    <li style="padding:6px 0; border-bottom:1px solid #1f1f1f;">✓ 4 cartões NFC personalizados</li>
+                    <li style="padding:6px 0; border-bottom:1px solid #1f1f1f;">✓ Site exclusivo com domínio próprio</li>
+                    <li style="padding:6px 0; border-bottom:1px solid #1f1f1f;">✓ Design profissional e adaptado para celulares</li>
+                    <li style="padding:6px 0; border-bottom:1px solid #1f1f1f;">✓ Botões animados e efeitos visuais modernos</li>
+                    <li style="padding:6px 0; border-bottom:1px solid #1f1f1f;">✓ WhatsApp, localização, redes sociais e agendamento</li>
+                    <li style="padding:6px 0; border-bottom:1px solid #1f1f1f;">✓ Opção para salvar seu contato com apenas um toque</li>
+                    <li style="padding:6px 0; border-bottom:1px solid #1f1f1f;">✓ QR Code integrado aos cartões</li>
+                    <li style="padding:6px 0; border-bottom:1px solid #1f1f1f;">✓ Entrega em até 2 a 3 dias úteis</li>
+                    <li style="padding:6px 0;">✓ Você recebe tudo configurado e funcionando</li>
+                </ul>
             </div>
         </div>
 
@@ -754,7 +763,8 @@
             </div>
             <div>
                 <div style="font-size:11px; text-transform:uppercase; letter-spacing:1px; color:#666; margin-bottom:4px;">Garantia</div>
-                <div style="font-size:14px; font-weight:bold;">1 Ano (Cartões NFC)</div>
+                <div style="font-size:14px; font-weight:bold;">12 Meses (Cartões NFC)</div>
+                <div style="font-size:10px; color:#666; margin-top:4px; max-width:200px;">Garantia sobre falhas de fabricação e funcionamento.</div>
             </div>
         </div>
 
@@ -969,6 +979,10 @@
                 scale: 2,
                 backgroundColor: '#0a0a0a',
                 useCORS: true,
+                // Força o html2canvas a renderizar usando a largura real do template (794px),
+                // e não a largura da tela do celular — sem isso, no mobile o PDF saía cortado pela metade
+                windowWidth: element.scrollWidth,
+                windowHeight: element.scrollHeight,
                 // Ignora canvases (ex.: o cartão 3D) para não esbarrar em restrições de segurança do WebGL ao clonar a página
                 ignoreElements: (el) => el.tagName === 'CANVAS'
             }).then((canvas) => {
@@ -1026,17 +1040,23 @@
                 y: 30, opacity: 0, duration: 0.8, stagger: 0.2
             });
 
+            // Texto da simulação: aparece uma única vez, não entra no loop do celular/cartão
+            gsap.from("#sim-text > *", {
+                scrollTrigger: { trigger: "#simulation", start: "top 50%" },
+                y: 30, opacity: 0, duration: 0.8, stagger: 0.2
+            });
+
             // Simulation Animation Timeline
+            // No mobile, a animação do celular + cartão roda em loop, reiniciando sozinha
             const tlSim = gsap.timeline({
+                repeat: window.innerWidth < 768 ? -1 : 0,
+                repeatDelay: 1,
                 scrollTrigger: {
                     trigger: "#simulation",
                     start: "top 50%", // Inicia quando o topo da seção chega no meio da tela
                 }
             });
 
-            // Textos da simulação
-            tlSim.from("#sim-text > *", { y: 30, opacity: 0, duration: 0.8, stagger: 0.2 }, 0);
-            
             // Celular sobe
             tlSim.from("#sim-phone", { y: 100, opacity: 0, duration: 1, ease: "back.out(1.2)" }, 0.2);
             
@@ -1237,16 +1257,17 @@
                 // Rotação ociosa contínua suave (se o mouse não estiver controlando fortemente)
                 const time = clock.getElapsedTime();
 
-                // No mobile não há arraste: o cartão gira sozinho em uma vitrine 360° suave
+                // No mobile não há arraste: o cartão gira sozinho em uma vitrine 360° suave e sofisticada
+                // (duas ondas sobrepostas em frequências diferentes evitam um movimento mecânico/repetitivo)
                 if (isMobileView && !isSpinning) {
-                    targetRotationY = Math.sin(time * 0.5) * 0.6;
-                    targetRotationX = Math.sin(time * 0.35) * 0.15;
+                    targetRotationY = Math.sin(time * 0.28) * 0.38 + Math.sin(time * 0.13) * 0.08;
+                    targetRotationX = Math.sin(time * 0.19) * 0.08;
                 }
 
                 // Lerp (Interpolação suave) para a rotação do mouse (pausado durante o giro por toque)
                 if (!isSpinning) {
-                    card.rotation.y += (targetRotationY - card.rotation.y) * 0.05;
-                    card.rotation.x += (targetRotationX - card.rotation.x) * 0.05;
+                    card.rotation.y += (targetRotationY - card.rotation.y) * 0.035;
+                    card.rotation.x += (targetRotationX - card.rotation.x) * 0.035;
                 }
 
                 // Adicionar leve flutuação
@@ -1292,6 +1313,13 @@
             });
 
             function tick() {
+                // Em mobile não há hover real, e essa lógica entrava em conflito com a transform
+                // controlada pelo GSAP no loop do celular/cartão, causando o cartão ficar pequeno
+                // até dar refresh na página. Por isso o efeito de proximidade só roda no desktop.
+                if (window.innerWidth < 768) {
+                    requestAnimationFrame(tick);
+                    return;
+                }
                 cards.forEach(card => {
                     const rect = card.getBoundingClientRect();
                     // Ignora cards fora da tela (evita cálculo/transform desnecessário)
