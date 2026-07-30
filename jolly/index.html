@@ -10,6 +10,20 @@
     <meta name="theme-color" content="#000000">
     <link rel="icon" type="image/png" href="img/logo-icon.png">
 
+    <!-- Open Graph / WhatsApp, Facebook, etc. -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Saturno NFC | The Jolly Washer">
+    <meta property="og:description" content="Proposta comercial exclusiva Saturno NFC.">
+    <meta property="og:image" content="img/1.png">
+    <meta property="og:image:width" content="1011">
+    <meta property="og:image:height" content="638">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Saturno NFC | The Jolly Washer">
+    <meta name="twitter:description" content="Proposta comercial exclusiva Saturno NFC.">
+    <meta name="twitter:image" content="img/1.png">
+
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -445,8 +459,8 @@
     <section id="plans" class="py-32 relative">
         <div class="max-w-7xl mx-auto px-6">
             <div class="text-center mb-20">
-                <h2 class="text-3xl md:text-5xl font-bold mb-4">Escolha sua órbita.</h2>
-                <p class="text-saturno-textMuted max-w-2xl mx-auto">Planos dimensionados para o tamanho da sua ambição. Preços exclusivos para <span class="text-white font-medium" data-var="empresa">Empresa</span>.</p>
+                <h2 class="text-3xl md:text-5xl font-bold mb-4">Seu projeto está pronto para decolar.</h2>
+                <p class="text-saturno-textMuted max-w-2xl mx-auto">A seguir, você encontrará todos os detalhes da solução preparada para a <span class="text-white font-medium" data-var="empresa">Empresa</span>. Após a aprovação, iniciaremos imediatamente a produção e a implantação do projeto.</p>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch" id="plans-container">
@@ -558,9 +572,12 @@
                         <span class="text-zinc-400">Prazo de Produção</span>
                         <span class="font-medium text-saturno-primary">3 a 4 dias úteis</span>
                     </div>
-                    <div class="flex justify-between items-center border-b border-white/10 pb-4">
+                    <div class="flex justify-between items-start border-b border-white/10 pb-4">
                         <span class="text-zinc-400">Garantia</span>
-                        <span class="font-medium">1 Ano (Cartões NFC)</span>
+                        <div class="text-right">
+                            <span class="font-medium block">12 Meses (Cartões NFC)</span>
+                            <span class="text-xs text-zinc-500 block mt-1 max-w-[220px]">Garantia sobre falhas de fabricação e funcionamento.</span>
+                        </div>
                     </div>
                     
                     <div class="pt-4 flex gap-4">
@@ -729,30 +746,25 @@
         </div>
 
         <div style="margin-bottom:32px;">
-            <div style="font-size:11px; text-transform:uppercase; letter-spacing:1px; color:#666; margin-bottom:12px;">Planos disponíveis</div>
+            <div style="font-size:11px; text-transform:uppercase; letter-spacing:1px; color:#666; margin-bottom:12px;">Plano Escolhido</div>
 
-            <div style="border:1px solid #2a2a2a; border-radius:12px; padding:20px; margin-bottom:12px;">
-                <div style="display:flex; justify-content:space-between; align-items:baseline;">
-                    <span style="font-size:16px; font-weight:bold;">Plano Essencial</span>
-                    <span style="font-size:22px; font-weight:bold;">R$ <span data-var="valorEssencial">--</span></span>
+            <div style="border:1px solid #7A5CFF; border-radius:12px; padding:24px;">
+                <div style="display:flex; justify-content:space-between; align-items:baseline; margin-bottom:6px;">
+                    <span style="font-size:20px; font-weight:bold;">Plano Profissional</span>
+                    <span style="font-size:26px; font-weight:bold;">R$ <span data-var="valorProfissional">--</span></span>
                 </div>
-                <div style="font-size:12px; color:#999; margin-top:8px;">4 cartões NFC personalizados · Site exclusivo com domínio próprio · WhatsApp, redes sociais e agendamento · Entrega em até 2 a 3 dias úteis</div>
-            </div>
+                <div style="width:60px; height:2px; background:#7A5CFF; margin-bottom:16px;"></div>
+                <div style="font-size:12px; color:#7A5CFF; margin-bottom:16px;">Em até 2x sem juros de R$400,00</div>
 
-            <div style="border:1px solid #2a2a2a; border-radius:12px; padding:20px; margin-bottom:12px;">
-                <div style="display:flex; justify-content:space-between; align-items:baseline;">
-                    <span style="font-size:16px; font-weight:bold;">Plano Profissional <span style="font-size:10px; background:#7A5CFF; color:#fff; padding:2px 8px; border-radius:999px; margin-left:8px;">RECOMENDADO</span></span>
-                    <span style="font-size:22px; font-weight:bold;">R$ <span data-var="valorProfissional">--</span></span>
-                </div>
-                <div style="font-size:12px; color:#999; margin-top:8px;">12 cartões NFC personalizados · 3 placas NFC (Google, Wi-Fi, agendamento) · Site profissional com domínio próprio · Entrega em até 3 a 4 dias úteis</div>
-            </div>
-
-            <div style="border:1px solid #2a2a2a; border-radius:12px; padding:20px;">
-                <div style="display:flex; justify-content:space-between; align-items:baseline;">
-                    <span style="font-size:16px; font-weight:bold;">Plano Fora de Órbita</span>
-                    <span style="font-size:22px; font-weight:bold;">R$ <span data-var="valorOrbita">--</span></span>
-                </div>
-                <div style="font-size:12px; color:#999; margin-top:8px;">30 cartões NFC personalizados · 30 tags NFC · Site sob medida · Relatórios de acessos e interações</div>
+                <ul style="list-style:none; padding:0; margin:0; font-size:13px; color:#ccc;">
+                    <li style="padding:6px 0; border-bottom:1px solid #1f1f1f;">✓ 12 cartões NFC personalizados</li>
+                    <li style="padding:6px 0; border-bottom:1px solid #1f1f1f;">✓ 3 placas NFC para Google, Wi-Fi e agendamento</li>
+                    <li style="padding:6px 0; border-bottom:1px solid #1f1f1f;">✓ Tudo do plano Essencial incluso</li>
+                    <li style="padding:6px 0; border-bottom:1px solid #1f1f1f;">✓ Site profissional com domínio próprio</li>
+                    <li style="padding:6px 0; border-bottom:1px solid #1f1f1f;">✓ Animações avançadas e experiência visual diferenciada</li>
+                    <li style="padding:6px 0; border-bottom:1px solid #1f1f1f;">✓ QR Code impresso nos cartões</li>
+                    <li style="padding:6px 0;">✓ Entrega em até 3 a 4 dias úteis</li>
+                </ul>
             </div>
         </div>
 
@@ -763,7 +775,8 @@
             </div>
             <div>
                 <div style="font-size:11px; text-transform:uppercase; letter-spacing:1px; color:#666; margin-bottom:4px;">Garantia</div>
-                <div style="font-size:14px; font-weight:bold;">1 Ano (Cartões NFC)</div>
+                <div style="font-size:14px; font-weight:bold;">12 Meses (Cartões NFC)</div>
+                <div style="font-size:10px; color:#666; margin-top:4px; max-width:200px;">Garantia sobre falhas de fabricação e funcionamento.</div>
             </div>
         </div>
 
@@ -978,6 +991,10 @@
                 scale: 2,
                 backgroundColor: '#0a0a0a',
                 useCORS: true,
+                // Força o html2canvas a renderizar usando a largura real do template (794px),
+                // e não a largura da tela do celular — sem isso, no mobile o PDF saía cortado pela metade
+                windowWidth: element.scrollWidth,
+                windowHeight: element.scrollHeight,
                 // Ignora canvases (ex.: o cartão 3D) para não esbarrar em restrições de segurança do WebGL ao clonar a página
                 ignoreElements: (el) => el.tagName === 'CANVAS'
             }).then((canvas) => {
