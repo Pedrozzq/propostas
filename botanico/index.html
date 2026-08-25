@@ -129,7 +129,7 @@
         }
         .blob-2 {
             bottom: -20%; right: -10%; width: 60vw; height: 60vw;
-            background: radial-gradient(circle, rgba(60,30,150,0.2) 0%, transparent 70%);
+            background: radial-gradient(circle, rgba(25,51,128,0.2) 0%, transparent 70%);
             animation-delay: -5s;
         }
 
@@ -466,57 +466,57 @@
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch" id="plans-container">
 
-                <!-- Plan 1 -->
-                <div class="plan-card proximity-card glass p-8 rounded-3xl border border-white/5 h-full hidden md:flex md:flex-col">
-                    <div class="mb-8">
-                        <h3 class="text-xl font-medium text-zinc-400 mb-1">Plano Essencial</h3>
-                        <p class="text-sm text-zinc-500 mb-4">Ter presença digital profissional</p>
-                        <div class="flex items-baseline gap-2">
-                            <span class="text-4xl font-bold text-white">R$ <span data-var="valorEssencial">--</span></span>
-                        </div>
-                        <p class="text-sm text-saturno-primary mt-2">Em até 2x sem juros de R$200,00</p>
-                    </div>
-
-                    <ul class="space-y-4 flex-1 text-sm text-zinc-300">
-                        <li class="flex items-start gap-3"><i data-lucide="check-circle-2" class="w-5 h-5 text-zinc-500 flex-shrink-0"></i> <span>4 cartões NFC personalizados</span></li>
-                        <li class="flex items-start gap-3"><i data-lucide="check-circle-2" class="w-5 h-5 text-zinc-500 flex-shrink-0"></i> <span>Site exclusivo com domínio próprio</span></li>
-                        <li class="flex items-start gap-3"><i data-lucide="check-circle-2" class="w-5 h-5 text-zinc-500 flex-shrink-0"></i> <span>Design profissional e adaptado para celulares</span></li>
-                        <li class="flex items-start gap-3"><i data-lucide="check-circle-2" class="w-5 h-5 text-zinc-500 flex-shrink-0"></i> <span>Botões animados e efeitos visuais modernos</span></li>
-                        <li class="flex items-start gap-3"><i data-lucide="check-circle-2" class="w-5 h-5 text-zinc-500 flex-shrink-0"></i> <span>WhatsApp, localização, redes sociais e agendamento</span></li>
-                        <li class="flex items-start gap-3"><i data-lucide="check-circle-2" class="w-5 h-5 text-zinc-500 flex-shrink-0"></i> <span>Opção para salvar seu contato com apenas um toque</span></li>
-                        <li class="flex items-start gap-3"><i data-lucide="check-circle-2" class="w-5 h-5 text-zinc-500 flex-shrink-0"></i> <span>QR Code integrado aos cartões</span></li>
-                        <li class="flex items-start gap-3"><i data-lucide="check-circle-2" class="w-5 h-5 text-zinc-500 flex-shrink-0"></i> <span>Entrega em até 2 a 3 dias úteis</span></li>
-                        <li class="flex items-start gap-3"><i data-lucide="check-circle-2" class="w-5 h-5 text-zinc-500 flex-shrink-0"></i> <span>Você recebe tudo configurado e funcionando</span></li>
-                    </ul>
-                    <button onclick="openChangePlanModal('Essencial')" class="w-full py-3 rounded-xl border border-white/10 hover:bg-white/5 transition-colors mt-8 font-medium">Trocar para Plano Essencial</button>
-                </div>
-
-                <!-- Plan 2 (Recomendado pela Saturno) -->
+                <!-- Plan 1 (Recomendado pela Saturno) -->
                 <div class="plan-card proximity-card glass-card p-1 rounded-3xl relative h-full md:-translate-y-4 shadow-glow z-10" data-base-y="-16">
                     <div class="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-saturno-primary text-white text-xs font-bold px-4 py-1 rounded-full uppercase tracking-wider whitespace-nowrap">
                         Recomendado pela Saturno
                     </div>
                     <div class="bg-saturno-surface/90 backdrop-blur-xl h-full w-full rounded-[23px] p-8 flex flex-col border border-white/10">
                         <div class="mb-8">
-                            <h3 class="text-2xl font-bold text-saturno-primary mb-1">Plano Profissional</h3>
-                            <p class="text-sm text-zinc-400 mb-4">Captar clientes e facilitar atendimentos</p>
+                            <h3 class="text-2xl font-bold text-saturno-primary mb-1">Plano Essencial</h3>
+                            <p class="text-sm text-zinc-400 mb-4">Ter presença digital profissional</p>
                             <div class="flex items-baseline gap-2">
-                                <span class="text-5xl font-bold text-white">R$ <span data-var="valorProfissional">--</span></span>
+                                <span class="text-5xl font-bold text-white">R$ <span data-var="valorEssencial">--</span></span>
                             </div>
-                            <p class="text-sm text-saturno-primary mt-2">Em até 2x sem juros de R$400,00</p>
+                            <p class="text-sm text-saturno-primary mt-2">Em até 2x sem juros de R$200,00</p>
                         </div>
 
                         <ul class="space-y-4 flex-1 text-sm text-white">
-                            <li class="flex items-start gap-3"><i data-lucide="check-circle-2" class="w-5 h-5 text-saturno-primary flex-shrink-0"></i> <span>12 cartões NFC personalizados</span></li>
-                            <li class="flex items-start gap-3"><i data-lucide="check-circle-2" class="w-5 h-5 text-saturno-primary flex-shrink-0"></i> <span>3 tags físicas NFC</span></li>
-                            <li class="flex items-start gap-3"><i data-lucide="check-circle-2" class="w-5 h-5 text-saturno-primary flex-shrink-0"></i> <span>Tudo do plano Essencial incluso</span></li>
-                            <li class="flex items-start gap-3"><i data-lucide="check-circle-2" class="w-5 h-5 text-saturno-primary flex-shrink-0"></i> <span>Site profissional com domínio próprio</span></li>
-                            <li class="flex items-start gap-3"><i data-lucide="check-circle-2" class="w-5 h-5 text-saturno-primary flex-shrink-0"></i> <span>Animações avançadas e experiência visual diferenciada</span></li>
-                            <li class="flex items-start gap-3"><i data-lucide="check-circle-2" class="w-5 h-5 text-saturno-primary flex-shrink-0"></i> <span>QR Code impresso nos cartões</span></li>
-                            <li class="flex items-start gap-3"><i data-lucide="check-circle-2" class="w-5 h-5 text-saturno-primary flex-shrink-0"></i> <span>Entrega em até 3 a 4 dias úteis</span></li>
+                            <li class="flex items-start gap-3"><i data-lucide="check-circle-2" class="w-5 h-5 text-saturno-primary flex-shrink-0"></i> <span>4 cartões NFC personalizados</span></li>
+                            <li class="flex items-start gap-3"><i data-lucide="check-circle-2" class="w-5 h-5 text-saturno-primary flex-shrink-0"></i> <span>Site exclusivo com domínio próprio</span></li>
+                            <li class="flex items-start gap-3"><i data-lucide="check-circle-2" class="w-5 h-5 text-saturno-primary flex-shrink-0"></i> <span>Design profissional e adaptado para celulares</span></li>
+                            <li class="flex items-start gap-3"><i data-lucide="check-circle-2" class="w-5 h-5 text-saturno-primary flex-shrink-0"></i> <span>Botões animados e efeitos visuais modernos</span></li>
+                            <li class="flex items-start gap-3"><i data-lucide="check-circle-2" class="w-5 h-5 text-saturno-primary flex-shrink-0"></i> <span>WhatsApp, localização, redes sociais e agendamento</span></li>
+                            <li class="flex items-start gap-3"><i data-lucide="check-circle-2" class="w-5 h-5 text-saturno-primary flex-shrink-0"></i> <span>Opção para salvar seu contato com apenas um toque</span></li>
+                            <li class="flex items-start gap-3"><i data-lucide="check-circle-2" class="w-5 h-5 text-saturno-primary flex-shrink-0"></i> <span>QR Code integrado aos cartões</span></li>
+                            <li class="flex items-start gap-3"><i data-lucide="check-circle-2" class="w-5 h-5 text-saturno-primary flex-shrink-0"></i> <span>Entrega em até 2 a 3 dias úteis</span></li>
+                            <li class="flex items-start gap-3"><i data-lucide="check-circle-2" class="w-5 h-5 text-saturno-primary flex-shrink-0"></i> <span>Você recebe tudo configurado e funcionando</span></li>
                         </ul>
                         <button onclick="openApprovalModal()" class="btn-premium w-full py-4 bg-saturno-primary text-white rounded-xl font-bold mt-8 shadow-md">Aprovar Proposta</button>
                     </div>
+                </div>
+
+                <!-- Plan 2 -->
+                <div class="plan-card proximity-card glass p-8 rounded-3xl border border-white/5 h-full hidden md:flex md:flex-col">
+                    <div class="mb-8">
+                        <h3 class="text-xl font-medium text-zinc-400 mb-1">Plano Profissional</h3>
+                        <p class="text-sm text-zinc-500 mb-4">Captar clientes e facilitar atendimentos</p>
+                        <div class="flex items-baseline gap-2">
+                            <span class="text-4xl font-bold text-white">R$ <span data-var="valorProfissional">--</span></span>
+                        </div>
+                        <p class="text-sm text-saturno-primary mt-2">Em até 2x sem juros de R$400,00</p>
+                    </div>
+
+                    <ul class="space-y-4 flex-1 text-sm text-zinc-300">
+                        <li class="flex items-start gap-3"><i data-lucide="check-circle-2" class="w-5 h-5 text-zinc-500 flex-shrink-0"></i> <span>12 cartões NFC personalizados</span></li>
+                        <li class="flex items-start gap-3"><i data-lucide="check-circle-2" class="w-5 h-5 text-zinc-500 flex-shrink-0"></i> <span>3 placas NFC para Google, Wi-Fi e agendamento</span></li>
+                        <li class="flex items-start gap-3"><i data-lucide="check-circle-2" class="w-5 h-5 text-zinc-500 flex-shrink-0"></i> <span>Tudo do plano Essencial incluso</span></li>
+                        <li class="flex items-start gap-3"><i data-lucide="check-circle-2" class="w-5 h-5 text-zinc-500 flex-shrink-0"></i> <span>Site profissional com domínio próprio</span></li>
+                        <li class="flex items-start gap-3"><i data-lucide="check-circle-2" class="w-5 h-5 text-zinc-500 flex-shrink-0"></i> <span>Animações avançadas e experiência visual diferenciada</span></li>
+                        <li class="flex items-start gap-3"><i data-lucide="check-circle-2" class="w-5 h-5 text-zinc-500 flex-shrink-0"></i> <span>QR Code impresso nos cartões</span></li>
+                        <li class="flex items-start gap-3"><i data-lucide="check-circle-2" class="w-5 h-5 text-zinc-500 flex-shrink-0"></i> <span>Entrega em até 3 a 4 dias úteis</span></li>
+                    </ul>
+                    <button onclick="openChangePlanModal('Profissional')" class="w-full py-3 rounded-xl border border-white/10 hover:bg-white/5 transition-colors mt-8 font-medium">Trocar para Plano Profissional</button>
                 </div>
 
                 <!-- Plan 3 -->
@@ -571,7 +571,7 @@
                     </div>
                     <div class="flex justify-between items-center border-b border-white/10 pb-4">
                         <span class="text-zinc-400">Prazo de Produção</span>
-                        <span class="font-medium text-saturno-primary">3 a 4 dias úteis</span>
+                        <span class="font-medium text-saturno-primary">2 a 3 dias úteis</span>
                     </div>
                     <div class="flex justify-between items-start border-b border-white/10 pb-4">
                         <span class="text-zinc-400">Garantia</span>
@@ -650,7 +650,7 @@
                     <i data-lucide="check-circle" class="w-8 h-8"></i>
                 </div>
                 <h3 class="text-2xl font-bold text-center mb-2">Confirmar Aprovação</h3>
-                <p class="text-center text-zinc-400 mb-8 text-sm">Tem certeza que deseja aprovar a proposta do plano <strong class="text-white">Profissional</strong> no valor de <strong class="text-white">R$ <span data-var="valorProfissional"></span></strong>?</p>
+                <p class="text-center text-zinc-400 mb-8 text-sm">Tem certeza que deseja aprovar a proposta do plano <strong class="text-white">Essencial</strong> no valor de <strong class="text-white">R$ <span data-var="valorEssencial"></span></strong>?</p>
                 
                 <div class="flex gap-4">
                     <button onclick="closeApprovalModal()" class="flex-1 py-3 rounded-xl border border-white/10 hover:bg-white/5 text-sm font-medium transition-colors">Cancelar</button>
@@ -680,7 +680,7 @@
                     <button onclick="trackPayment('PIX')" class="w-full py-3 rounded-xl bg-[#32BCAD]/10 text-[#32BCAD] border border-[#32BCAD]/30 hover:bg-[#32BCAD]/20 flex items-center justify-center gap-2 font-medium transition-colors">
                         <i data-lucide="qr-code" class="w-5 h-5"></i> Pagar com PIX
                     </button>
-                    <a href="https://pag.ae/81YBSZ4YK" target="_blank" rel="noopener" onclick="Tracking.trackPayment('Cartão')" class="w-full py-3 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 flex items-center justify-center gap-2 font-medium transition-colors text-white">
+                    <a href="https://pag.ae/81YzYhijp" target="_blank" rel="noopener" onclick="Tracking.trackPayment('Cartão')" class="w-full py-3 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 flex items-center justify-center gap-2 font-medium transition-colors text-white">
                         <i data-lucide="credit-card" class="w-5 h-5"></i> Cartão de Crédito
                     </a>
                     <a href="https://wa.me/5531920067518?text=Aprovado%20%E2%9C%85" target="_blank" rel="noopener" onclick="Tracking.trackPayment('WhatsApp')" class="w-full py-3 rounded-xl bg-[#25D366]/10 text-[#25D366] border border-[#25D366]/30 hover:bg-[#25D366]/20 flex items-center justify-center gap-2 font-medium transition-colors">
@@ -697,7 +697,7 @@
                 <h3 class="text-2xl font-bold text-center mb-2">Pagar com PIX</h3>
                 <p class="text-center text-zinc-400 mb-6 text-sm">Escaneie o QR Code ou copie o código abaixo para pagar.</p>
 
-                <img src="img/qr-code-profissional.jfif" alt="QR Code PIX" class="w-48 h-48 rounded-xl mx-auto mb-6 border border-white/10 object-cover">
+                <img src="img/qr-code.jpeg" alt="QR Code PIX" class="w-48 h-48 rounded-xl mx-auto mb-6 border border-white/10 object-cover">
 
                 <div class="w-full mb-4">
                     <p class="text-xs uppercase tracking-wider text-zinc-500 font-bold mb-2">Código Copia e Cola</p>
@@ -751,20 +751,22 @@
 
             <div style="border:1px solid #39AC86; border-radius:12px; padding:24px;">
                 <div style="display:flex; justify-content:space-between; align-items:baseline; margin-bottom:6px;">
-                    <span style="font-size:20px; font-weight:bold;">Plano Profissional</span>
-                    <span style="font-size:26px; font-weight:bold;">R$ <span data-var="valorProfissional">--</span></span>
+                    <span style="font-size:20px; font-weight:bold;">Plano Essencial</span>
+                    <span style="font-size:26px; font-weight:bold;">R$ <span data-var="valorEssencial">--</span></span>
                 </div>
                 <div style="width:60px; height:2px; background:#39AC86; margin-bottom:16px;"></div>
-                <div style="font-size:12px; color:#39AC86; margin-bottom:16px;">Em até 2x sem juros de R$400,00</div>
+                <div style="font-size:12px; color:#39AC86; margin-bottom:16px;">Em até 2x sem juros de R$200,00</div>
 
                 <ul style="list-style:none; padding:0; margin:0; font-size:13px; color:#ccc;">
-                    <li style="padding:6px 0; border-bottom:1px solid #1f1f1f;">✓ 12 cartões NFC personalizados</li>
-                    <li style="padding:6px 0; border-bottom:1px solid #1f1f1f;">✓ 3 tags físicas NFC</li>
-                    <li style="padding:6px 0; border-bottom:1px solid #1f1f1f;">✓ Tudo do plano Essencial incluso</li>
-                    <li style="padding:6px 0; border-bottom:1px solid #1f1f1f;">✓ Site profissional com domínio próprio</li>
-                    <li style="padding:6px 0; border-bottom:1px solid #1f1f1f;">✓ Animações avançadas e experiência visual diferenciada</li>
-                    <li style="padding:6px 0; border-bottom:1px solid #1f1f1f;">✓ QR Code impresso nos cartões</li>
-                    <li style="padding:6px 0;">✓ Entrega em até 3 a 4 dias úteis</li>
+                    <li style="padding:6px 0; border-bottom:1px solid #1f1f1f;">✓ 4 cartões NFC personalizados</li>
+                    <li style="padding:6px 0; border-bottom:1px solid #1f1f1f;">✓ Site exclusivo com domínio próprio</li>
+                    <li style="padding:6px 0; border-bottom:1px solid #1f1f1f;">✓ Design profissional e adaptado para celulares</li>
+                    <li style="padding:6px 0; border-bottom:1px solid #1f1f1f;">✓ Botões animados e efeitos visuais modernos</li>
+                    <li style="padding:6px 0; border-bottom:1px solid #1f1f1f;">✓ WhatsApp, localização, redes sociais e agendamento</li>
+                    <li style="padding:6px 0; border-bottom:1px solid #1f1f1f;">✓ Opção para salvar seu contato com apenas um toque</li>
+                    <li style="padding:6px 0; border-bottom:1px solid #1f1f1f;">✓ QR Code integrado aos cartões</li>
+                    <li style="padding:6px 0; border-bottom:1px solid #1f1f1f;">✓ Entrega em até 2 a 3 dias úteis</li>
+                    <li style="padding:6px 0;">✓ Você recebe tudo configurado e funcionando</li>
                 </ul>
             </div>
         </div>
@@ -772,7 +774,7 @@
         <div style="display:flex; gap:32px; margin-bottom:32px;">
             <div>
                 <div style="font-size:11px; text-transform:uppercase; letter-spacing:1px; color:#666; margin-bottom:4px;">Prazo de Produção</div>
-                <div style="font-size:14px; color:#39AC86; font-weight:bold;">3 a 4 dias úteis</div>
+                <div style="font-size:14px; color:#39AC86; font-weight:bold;">2 a 3 dias úteis</div>
             </div>
             <div>
                 <div style="font-size:11px; text-transform:uppercase; letter-spacing:1px; color:#666; margin-bottom:4px;">Garantia</div>
@@ -838,8 +840,8 @@
             createProductionOrder: () => {
                 const order = {
                     cliente: clientData.empresa,
-                    plano: "Profissional",
-                    valor: clientData.valorProfissional,
+                    plano: "Essencial",
+                    valor: clientData.valorEssencial,
                     data: new Date().toISOString(),
                     status: "aprovada",
                     vendedor: "Sistema Saturno"
@@ -857,7 +859,7 @@
         const stateConfirm = document.getElementById('modal-state-confirm');
         const stateSuccess = document.getElementById('modal-state-success');
         const statePix = document.getElementById('modal-state-pix');
-        const PIX_CODE = "00020126580014BR.GOV.BCB.PIX0136275ab733-6204-479f-b204-488c22bab3685204000053039865406800.005802BR592567.786.048 PEDRO HENRIQUE6009SAO PAULO61080540900062250521F261u7X7Gy540htadw87n6304BF80";
+        const PIX_CODE = "00020126580014BR.GOV.BCB.PIX0136275ab733-6204-479f-b204-488c22bab3685204000053039865406400.005802BR592567.786.048 PEDRO HENRIQUE6009SAO PAULO61080540900062250521EmDJqN6rmibZvSQadw87n63049BEB";
 
         function openApprovalModal() {
             modal.classList.remove('hidden');
