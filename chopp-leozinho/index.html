@@ -656,10 +656,10 @@
                             </div>
                             <div class="sp-row monte-item">
                                 <div class="sp-thumb sp-thumb-chav"><img src="img/chaveiro-nfc-sem-fundo.webp" alt="" width="251" height="456" decoding="async"></div>
-                                <div class="sp-txt"><em class="sp-val">R$ 30 cada</em><b>Chaveiro NFC <em class="sp-opc">Opcional</em></b><span>Para a equipe e os clientes fiéis: aproximou, o site da <span data-var="empresa">Empresa</span> abre.</span></div>
-                                <div class="sp-qtd" data-stepper="chaveiros" role="group" aria-label="Quantidade de chaveiros NFC">
+                                <div class="sp-txt"><em class="sp-val">R$ 30 cada</em><b>Chaveiro Instagram <em class="sp-opc">Opcional</em></b><span>Aproximou, abre o Instagram da sua marca.</span></div>
+                                <div class="sp-qtd" data-stepper="chaveiros" role="group" aria-label="Quantidade de chaveiros Instagram">
                                     <button type="button" data-passo="-1" aria-label="Remover um chaveiro"><i data-lucide="minus" class="w-3.5 h-3.5"></i></button>
-                                    <input type="number" inputmode="numeric" min="0" max="200" value="0" aria-label="Quantidade de chaveiros NFC">
+                                    <input type="number" inputmode="numeric" min="0" max="200" value="0" aria-label="Quantidade de chaveiros Instagram">
                                     <button type="button" data-passo="1" aria-label="Adicionar um chaveiro"><i data-lucide="plus" class="w-3.5 h-3.5"></i></button>
                                 </div>
                             </div>
@@ -961,7 +961,7 @@
             if (plano.site) itens.push({ nome: 'Site personalizado', qtd: 1, preco: PRECOS.site });
             if (plano.cartoes) itens.push({ nome: plano.cartoes === 1 ? 'Cartão NFC' : 'Cartões NFC', qtd: plano.cartoes, preco: PRECOS.cartao });
             if (plano.tags) itens.push({ nome: plano.tags === 1 ? 'Tag Avaliação Google' : 'Tags Avaliação Google', qtd: plano.tags, preco: PRECOS.tag });
-            if (plano.chaveiros) itens.push({ nome: plano.chaveiros === 1 ? 'Chaveiro NFC' : 'Chaveiros NFC', qtd: plano.chaveiros, preco: PRECOS.chaveiro });
+            if (plano.chaveiros) itens.push({ nome: plano.chaveiros === 1 ? 'Chaveiro Instagram' : 'Chaveiros Instagram', qtd: plano.chaveiros, preco: PRECOS.chaveiro });
             if (plano.crm) itens.push({ nome: 'CRM Saturno (1º mês)', qtd: 1, preco: PRECOS.crm });
             return itens;
         }
